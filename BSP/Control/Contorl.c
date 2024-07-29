@@ -10,19 +10,19 @@ int Encoder_Left,Encoder_Right,
 extern PID pid; 
 
 void Interrupt_Solution(void){
-	if(Flag_2ms == 1){
-			
-		Flag_2ms = 0;
-				
-	}
-	if(Flag_20ms == 1){
-		
-		
-		Flag_20ms = 0;
-	}
+//	if(Flag_2ms == 1){
+//			
+//		Flag_2ms = 0;
+//				
+//	}
+//	if(Flag_20ms == 1){
+//		
+//		
+//		Flag_20ms = 0;
+//	}
 	
-	Encoder_Get();
-	Motor_pwm = Velocity_Con(4000);
+	
+	Motor_pwm = Velocity_Con(1000);
 	
 	printf("Motor_pwm %d\n", Motor_pwm);
 	Motor_straight(Motor_pwm);
@@ -104,7 +104,9 @@ int Velocity_Con(int Aim_velocity)
 	//1.计算速度误差
 	Encoder_Get();
 			
-	Now_velocity = (Encoder_left_out + Encoder_right_out) / 2 * proportion;							//这里的0是预期值，即速度为零静止，不求均值是为了防止舍入误差			
+	Now_velocity = (Encoder_left_out + Encoder_right_out) * proportion / 2 ;							//这里的0是预期值，即速度为零静止，不求均值是为了防止舍入误差			
+	
+	//printf("Now_velocity: %d\n",Now_velocity);
 	
 	Now_error = Aim_velocity - Now_velocity ;
 	
@@ -112,7 +114,7 @@ int Velocity_Con(int Aim_velocity)
 	
 	Last_error = Now_error;
 	
-	printf("Pwm_out: %d\n",Pwm_out); 
+	//printf("Pwm_out: %d\n",Pwm_out); 
 	
 	return Pwm_out;
 }

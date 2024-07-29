@@ -58,6 +58,25 @@ float Duty_Limit(int16_t Duty)
 		return Duty;
 }
 
+/*
+***  左电机PWM驱动
+*/
+void Moter_Left_Pwm(uint16_t duty){
+	PwmA_Duty_Set(0,0);																
+	PwmA_Duty_Set(Duty_Limit(duty),1);
+
+}
+
+
+/*
+***  电右机PWM驱动
+*/
+void Moter_Right_Pwm(uint16_t duty){
+	PwmB_Duty_Set(0,0);
+	PwmB_Duty_Set(Duty_Limit(duty),1);
+
+}
+
 
 void Motor_straight(float speed)										//电机直行,两轮正转
 {

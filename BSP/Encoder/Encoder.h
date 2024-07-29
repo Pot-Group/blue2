@@ -16,6 +16,6 @@ extern unsigned char Flag_20ms;
 extern unsigned char Flag_50ms; 
 
 extern int16_t	 Encoder_left_out,
-							 Encoder_right_out;
+				 Encoder_right_out;
 
 #endif

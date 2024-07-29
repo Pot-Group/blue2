@@ -27,8 +27,8 @@ void Encoder_Get(){
 			//Encoder_right_out =Encoder_right_out Encoder_right_out * low_pass + Encoder_right * (1 - low_pass);
 			Right_Count = 0;
    
-//			printf("Encoder_left_out: %d\n",Encoder_left_out); 
-//			printf("Encoder_right_out: %d\n",Encoder_right_out);
+			printf("Encoder_left_out: %d\n",Encoder_left_out); 
+			printf("Encoder_right_out: %d\n",Encoder_right_out);
 	
 //	printf("Encoder_right_out: %d\n",(Encoder_right+Encoder_left)/2);
 }

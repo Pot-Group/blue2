@@ -1,6 +1,6 @@
 Dependencies for Project 'empty_LP_MSPM0G3507_nortos_keil', Target 'MSPM0G3507_Project': (DO NOT MODIFY !)
 CompilerVersion: 6160000::V6.16::ARMCLANG
-F (../empty.c)(0x66A7A78C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O2 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-covered-switch-default -Wno-unreachable-code-break -I ../../source/third_party/CMSIS/Core/Include -I ../../source -I ../BSP -I ../../oled -I ../../All_contoll -I ../BSP/PWM -I ../BSP/Motor -I ../BSP/Encoder -I ../BSP/UART -I ../BSP/Control -I ../BSP/Line_Follow -I ../BSP/Blue_Connect -I ../BSP/ADC_Get -I ../BSP/mpu6050 -I ../BSP/mpu6050/eMPL-D__UVISION_VERSION="535" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/empty.o -MD)
+F (../empty.c)(0x66A7B03D)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O2 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-covered-switch-default -Wno-unreachable-code-break -I ../../source/third_party/CMSIS/Core/Include -I ../../source -I ../BSP -I ../../oled -I ../../All_contoll -I ../BSP/PWM -I ../BSP/Motor -I ../BSP/Encoder -I ../BSP/UART -I ../BSP/Control -I ../BSP/Line_Follow -I ../BSP/Blue_Connect -I ../BSP/ADC_Get -I ../BSP/mpu6050 -I ../BSP/mpu6050/eMPL-D__UVISION_VERSION="535" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/empty.o -MD)
 I (..\..\All_contoll\board.h)(0x66A74346)
 I (..\..\All_contoll\ti_msp_dl_config.h)(0x66A793B9)
 I (..\..\source\ti\devices\msp\msp.h)(0x66631CE6)
@@ -87,7 +87,7 @@ I (..\..\source\ti\driverlib\m0p\dl_interrupt.h)(0x66631CE6)
 I (..\..\source\ti\driverlib\m0p\dl_systick.h)(0x66631CE6)
 I (..\BSP\PWM\PWM.h)(0x66A741FC)
 I (..\BSP\Motor\Motor.h)(0x66A74172)
-I (..\BSP\Encoder\Encoder.h)(0x66A74A7D)
+I (..\BSP\Encoder\Encoder.h)(0x66A7B7AB)
 I (..\BSP\Line_Follow\Line_Follow.h)(0x66A7415F)
 I (..\BSP\UART\UART.h)(0x66A4AF37)
 I (..\BSP\Blue_Connect\bluebooth.h)(0x66A73BF7)
@@ -270,7 +270,7 @@ I (..\..\source\ti\driverlib\m0p\dl_interrupt.h)(0x66631CE6)
 I (..\..\source\ti\driverlib\m0p\dl_systick.h)(0x66631CE6)
 I (..\BSP\PWM\PWM.h)(0x66A741FC)
 I (..\BSP\Motor\Motor.h)(0x66A74172)
-I (..\BSP\Encoder\Encoder.h)(0x66A74A7D)
+I (..\BSP\Encoder\Encoder.h)(0x66A7B7AB)
 I (..\BSP\Line_Follow\Line_Follow.h)(0x66A7415F)
 I (..\BSP\UART\UART.h)(0x66A4AF37)
 I (..\BSP\Blue_Connect\bluebooth.h)(0x66A73BF7)
@@ -367,7 +367,7 @@ I (..\..\source\ti\driverlib\m0p\dl_interrupt.h)(0x66631CE6)
 I (..\..\source\ti\driverlib\m0p\dl_systick.h)(0x66631CE6)
 I (..\BSP\PWM\PWM.h)(0x66A741FC)
 I (..\BSP\Motor\Motor.h)(0x66A74172)
-I (..\BSP\Encoder\Encoder.h)(0x66A74A7D)
+I (..\BSP\Encoder\Encoder.h)(0x66A7B7AB)
 I (..\BSP\Line_Follow\Line_Follow.h)(0x66A7415F)
 I (..\BSP\Blue_Connect\bluebooth.h)(0x66A73BF7)
 I (D:\Keil_v5_mdk\ARM\ARMCLANG\include\string.h)(0x603507D0)
@@ -466,7 +466,7 @@ I (..\..\source\ti\driverlib\m0p\dl_interrupt.h)(0x66631CE6)
 I (..\..\source\ti\driverlib\m0p\dl_systick.h)(0x66631CE6)
 I (..\BSP\PWM\PWM.h)(0x66A741FC)
 I (..\BSP\Motor\Motor.h)(0x66A74172)
-I (..\BSP\Encoder\Encoder.h)(0x66A74A7D)
+I (..\BSP\Encoder\Encoder.h)(0x66A7B7AB)
 I (..\BSP\Line_Follow\Line_Follow.h)(0x66A7415F)
 I (..\BSP\UART\UART.h)(0x66A4AF37)
 I (..\BSP\mpu6050\mpu6050.h)(0x66A6ED0C)
@@ -561,7 +561,7 @@ I (..\..\source\ti\driverlib\m0p\dl_interrupt.h)(0x66631CE6)
 I (..\..\source\ti\driverlib\m0p\dl_systick.h)(0x66631CE6)
 I (..\BSP\PWM\PWM.h)(0x66A741FC)
 I (..\BSP\Motor\Motor.h)(0x66A74172)
-I (..\BSP\Encoder\Encoder.h)(0x66A74A7D)
+I (..\BSP\Encoder\Encoder.h)(0x66A7B7AB)
 I (..\BSP\Line_Follow\Line_Follow.h)(0x66A7415F)
 I (..\BSP\UART\UART.h)(0x66A4AF37)
 I (..\BSP\Blue_Connect\bluebooth.h)(0x66A73BF7)
@@ -661,7 +661,7 @@ I (..\..\source\ti\driverlib\m0p\dl_interrupt.h)(0x66631CE6)
 I (..\..\source\ti\driverlib\m0p\dl_systick.h)(0x66631CE6)
 I (..\BSP\PWM\PWM.h)(0x66A741FC)
 I (..\BSP\Motor\Motor.h)(0x66A74172)
-I (..\BSP\Encoder\Encoder.h)(0x66A74A7D)
+I (..\BSP\Encoder\Encoder.h)(0x66A7B7AB)
 I (..\BSP\Line_Follow\Line_Follow.h)(0x66A7415F)
 I (..\BSP\UART\UART.h)(0x66A4AF37)
 I (..\BSP\Blue_Connect\bluebooth.h)(0x66A73BF7)
@@ -759,7 +759,7 @@ I (..\..\source\ti\driverlib\m0p\dl_interrupt.h)(0x66631CE6)
 I (..\..\source\ti\driverlib\m0p\dl_systick.h)(0x66631CE6)
 I (..\BSP\PWM\PWM.h)(0x66A741FC)
 I (..\BSP\Motor\Motor.h)(0x66A74172)
-I (..\BSP\Encoder\Encoder.h)(0x66A74A7D)
+I (..\BSP\Encoder\Encoder.h)(0x66A7B7AB)
 I (..\BSP\Line_Follow\Line_Follow.h)(0x66A7415F)
 I (..\BSP\UART\UART.h)(0x66A4AF37)
 I (..\BSP\Blue_Connect\bluebooth.h)(0x66A73BF7)
@@ -856,7 +856,7 @@ I (..\..\source\ti\driverlib\m0p\dl_interrupt.h)(0x66631CE6)
 I (..\..\source\ti\driverlib\m0p\dl_systick.h)(0x66631CE6)
 I (..\BSP\PWM\PWM.h)(0x66A741FC)
 I (..\BSP\Motor\Motor.h)(0x66A74172)
-I (..\BSP\Encoder\Encoder.h)(0x66A74A7D)
+I (..\BSP\Encoder\Encoder.h)(0x66A7B7AB)
 I (..\BSP\UART\UART.h)(0x66A4AF37)
 I (..\BSP\Blue_Connect\bluebooth.h)(0x66A73BF7)
 I (D:\Keil_v5_mdk\ARM\ARMCLANG\include\string.h)(0x603507D0)
@@ -865,7 +865,7 @@ I (..\BSP\mpu6050\eMPL\inv_mpu.h)(0x6655818E)
 I (..\BSP\Control\Control.h)(0x66A7AB5E)
 I (D:\Keil_v5_mdk\ARM\ARMCLANG\include\stdio.h)(0x603507D4)
 F (..\BSP\Line_Follow\Line_Follow.h)(0x66A7415F)()
-F (..\BSP\Motor\Motor.c)(0x66A7A9CA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O2 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-covered-switch-default -Wno-unreachable-code-break -I ../../source/third_party/CMSIS/Core/Include -I ../../source -I ../BSP -I ../../oled -I ../../All_contoll -I ../BSP/PWM -I ../BSP/Motor -I ../BSP/Encoder -I ../BSP/UART -I ../BSP/Control -I ../BSP/Line_Follow -I ../BSP/Blue_Connect -I ../BSP/ADC_Get -I ../BSP/mpu6050 -I ../BSP/mpu6050/eMPL-D__UVISION_VERSION="535" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/motor.o -MD)
+F (..\BSP\Motor\Motor.c)(0x66A7B76B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O2 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-covered-switch-default -Wno-unreachable-code-break -I ../../source/third_party/CMSIS/Core/Include -I ../../source -I ../BSP -I ../../oled -I ../../All_contoll -I ../BSP/PWM -I ../BSP/Motor -I ../BSP/Encoder -I ../BSP/UART -I ../BSP/Control -I ../BSP/Line_Follow -I ../BSP/Blue_Connect -I ../BSP/ADC_Get -I ../BSP/mpu6050 -I ../BSP/mpu6050/eMPL-D__UVISION_VERSION="535" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/motor.o -MD)
 I (..\BSP\Motor\Motor.h)(0x66A74172)
 I (..\..\All_contoll\board.h)(0x66A74346)
 I (..\..\All_contoll\ti_msp_dl_config.h)(0x66A793B9)
@@ -952,7 +952,7 @@ I (..\..\source\ti\driverlib\dl_wwdt.h)(0x66631CE6)
 I (..\..\source\ti\driverlib\m0p\dl_interrupt.h)(0x66631CE6)
 I (..\..\source\ti\driverlib\m0p\dl_systick.h)(0x66631CE6)
 I (..\BSP\PWM\PWM.h)(0x66A741FC)
-I (..\BSP\Encoder\Encoder.h)(0x66A74A7D)
+I (..\BSP\Encoder\Encoder.h)(0x66A7B7AB)
 I (..\BSP\Line_Follow\Line_Follow.h)(0x66A7415F)
 I (..\BSP\UART\UART.h)(0x66A4AF37)
 I (..\BSP\Blue_Connect\bluebooth.h)(0x66A73BF7)
@@ -1049,7 +1049,7 @@ I (..\..\source\ti\driverlib\dl_wwdt.h)(0x66631CE6)
 I (..\..\source\ti\driverlib\m0p\dl_interrupt.h)(0x66631CE6)
 I (..\..\source\ti\driverlib\m0p\dl_systick.h)(0x66631CE6)
 I (..\BSP\Motor\Motor.h)(0x66A74172)
-I (..\BSP\Encoder\Encoder.h)(0x66A74A7D)
+I (..\BSP\Encoder\Encoder.h)(0x66A7B7AB)
 I (..\BSP\Line_Follow\Line_Follow.h)(0x66A7415F)
 I (..\BSP\UART\UART.h)(0x66A4AF37)
 I (..\BSP\Blue_Connect\bluebooth.h)(0x66A73BF7)
@@ -1057,8 +1057,8 @@ I (D:\Keil_v5_mdk\ARM\ARMCLANG\include\string.h)(0x603507D0)
 I (..\BSP\mpu6050\mpu6050.h)(0x66A6ED0C)
 I (..\BSP\mpu6050\eMPL\inv_mpu.h)(0x6655818E)
 I (..\BSP\Control\Control.h)(0x66A7AB5E)
-F (..\BSP\Encoder\Encoder.c)(0x66A7AAFA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O2 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-covered-switch-default -Wno-unreachable-code-break -I ../../source/third_party/CMSIS/Core/Include -I ../../source -I ../BSP -I ../../oled -I ../../All_contoll -I ../BSP/PWM -I ../BSP/Motor -I ../BSP/Encoder -I ../BSP/UART -I ../BSP/Control -I ../BSP/Line_Follow -I ../BSP/Blue_Connect -I ../BSP/ADC_Get -I ../BSP/mpu6050 -I ../BSP/mpu6050/eMPL-D__UVISION_VERSION="535" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/encoder.o -MD)
-I (..\BSP\Encoder\Encoder.h)(0x66A74A7D)
+F (..\BSP\Encoder\Encoder.c)(0x66A7B7AB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O2 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-covered-switch-default -Wno-unreachable-code-break -I ../../source/third_party/CMSIS/Core/Include -I ../../source -I ../BSP -I ../../oled -I ../../All_contoll -I ../BSP/PWM -I ../BSP/Motor -I ../BSP/Encoder -I ../BSP/UART -I ../BSP/Control -I ../BSP/Line_Follow -I ../BSP/Blue_Connect -I ../BSP/ADC_Get -I ../BSP/mpu6050 -I ../BSP/mpu6050/eMPL-D__UVISION_VERSION="535" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/encoder.o -MD)
+I (..\BSP\Encoder\Encoder.h)(0x66A7B7AB)
 I (..\..\All_contoll\board.h)(0x66A74346)
 I (..\..\All_contoll\ti_msp_dl_config.h)(0x66A793B9)
 I (..\..\source\ti\devices\msp\msp.h)(0x66631CE6)
@@ -1153,8 +1153,8 @@ I (..\BSP\mpu6050\mpu6050.h)(0x66A6ED0C)
 I (..\BSP\mpu6050\eMPL\inv_mpu.h)(0x6655818E)
 I (..\BSP\Control\Control.h)(0x66A7AB5E)
 I (D:\Keil_v5_mdk\ARM\ARMCLANG\include\stdio.h)(0x603507D4)
-F (..\BSP\Encoder\Encoder.h)(0x66A74A7D)()
-F (..\BSP\Control\Contorl.c)(0x66A7ADDE)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O2 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-covered-switch-default -Wno-unreachable-code-break -I ../../source/third_party/CMSIS/Core/Include -I ../../source -I ../BSP -I ../../oled -I ../../All_contoll -I ../BSP/PWM -I ../BSP/Motor -I ../BSP/Encoder -I ../BSP/UART -I ../BSP/Control -I ../BSP/Line_Follow -I ../BSP/Blue_Connect -I ../BSP/ADC_Get -I ../BSP/mpu6050 -I ../BSP/mpu6050/eMPL-D__UVISION_VERSION="535" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/contorl.o -MD)
+F (..\BSP\Encoder\Encoder.h)(0x66A7B7AB)()
+F (..\BSP\Control\Contorl.c)(0x66A7B7F8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O2 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-covered-switch-default -Wno-unreachable-code-break -I ../../source/third_party/CMSIS/Core/Include -I ../../source -I ../BSP -I ../../oled -I ../../All_contoll -I ../BSP/PWM -I ../BSP/Motor -I ../BSP/Encoder -I ../BSP/UART -I ../BSP/Control -I ../BSP/Line_Follow -I ../BSP/Blue_Connect -I ../BSP/ADC_Get -I ../BSP/mpu6050 -I ../BSP/mpu6050/eMPL-D__UVISION_VERSION="535" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/contorl.o -MD)
 I (..\BSP\Control\Control.h)(0x66A7AB5E)
 I (..\..\All_contoll\board.h)(0x66A74346)
 I (..\..\All_contoll\ti_msp_dl_config.h)(0x66A793B9)
@@ -1242,7 +1242,7 @@ I (..\..\source\ti\driverlib\m0p\dl_interrupt.h)(0x66631CE6)
 I (..\..\source\ti\driverlib\m0p\dl_systick.h)(0x66631CE6)
 I (..\BSP\PWM\PWM.h)(0x66A741FC)
 I (..\BSP\Motor\Motor.h)(0x66A74172)
-I (..\BSP\Encoder\Encoder.h)(0x66A74A7D)
+I (..\BSP\Encoder\Encoder.h)(0x66A7B7AB)
 I (..\BSP\Line_Follow\Line_Follow.h)(0x66A7415F)
 I (..\BSP\UART\UART.h)(0x66A4AF37)
 I (..\BSP\Blue_Connect\bluebooth.h)(0x66A73BF7)
