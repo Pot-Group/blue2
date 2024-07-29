@@ -3356,102 +3356,101 @@ Image Symbol Table
     [Anonymous Symbol]                       0x00002d6c   Section        0  board.o(.text.fputc)
     __arm_cp.10_0                            0x00002d7c   Number         4  board.o(.text.fputc)
     [Anonymous Symbol]                       0x00002d80   Section        0  empty.o(.text.main)
-    __arm_cp.0_0                             0x00002e30   Number         4  empty.o(.text.main)
-    __arm_cp.0_1                             0x00002e34   Number         4  empty.o(.text.main)
-    __arm_cp.0_2                             0x00002e38   Number         4  empty.o(.text.main)
-    __arm_cp.0_6                             0x00002e70   Number         4  empty.o(.text.main)
-    [Anonymous Symbol]                       0x00002ea0   Section        0  inv_mpu.o(.text.mget_ms)
-    [Anonymous Symbol]                       0x00002ea4   Section        0  inv_mpu.o(.text.mpu_configure_fifo)
-    [Anonymous Symbol]                       0x00002f38   Section        0  inv_mpu.o(.text.mpu_dmp_get_data)
-    __arm_cp.47_0                            0x000030f4   Number         4  inv_mpu.o(.text.mpu_dmp_get_data)
-    __arm_cp.47_1                            0x000030f8   Number         4  inv_mpu.o(.text.mpu_dmp_get_data)
-    [Anonymous Symbol]                       0x000030fc   Section        0  inv_mpu.o(.text.mpu_dmp_init)
-    [Anonymous Symbol]                       0x0000317c   Section        0  inv_mpu.o(.text.mpu_get_accel_fsr)
-    __arm_cp.19_0                            0x000031a4   Number         4  inv_mpu.o(.text.mpu_get_accel_fsr)
-    __arm_cp.19_1                            0x000031a8   Number         4  inv_mpu.o(.text.mpu_get_accel_fsr)
-    __arm_cp.19_2                            0x000031ac   Number         4  inv_mpu.o(.text.mpu_get_accel_fsr)
-    [Anonymous Symbol]                       0x000031b0   Section        0  inv_mpu.o(.text.mpu_init)
-    __arm_cp.2_0                             0x00003340   Number         4  inv_mpu.o(.text.mpu_init)
-    __arm_cp.2_3                             0x0000338c   Number         4  inv_mpu.o(.text.mpu_init)
-    __arm_cp.2_4                             0x00003390   Number         4  inv_mpu.o(.text.mpu_init)
-    [Anonymous Symbol]                       0x00003394   Section        0  inv_mpu.o(.text.mpu_load_firmware)
-    __arm_cp.37_0                            0x000034b8   Number         4  inv_mpu.o(.text.mpu_load_firmware)
-    [Anonymous Symbol]                       0x000034bc   Section        0  inv_mpu.o(.text.mpu_lp_accel_mode)
-    [Anonymous Symbol]                       0x000036b4   Section        0  inv_mpu.o(.text.mpu_read_fifo_stream)
-    __arm_cp.30_0                            0x00003754   Number         4  inv_mpu.o(.text.mpu_read_fifo_stream)
-    [Anonymous Symbol]                       0x00003758   Section        0  inv_mpu.o(.text.mpu_reset_fifo)
-    __arm_cp.17_0                            0x000038a0   Number         4  inv_mpu.o(.text.mpu_reset_fifo)
-    [Anonymous Symbol]                       0x000038a4   Section        0  inv_mpu.o(.text.mpu_set_bypass)
-    [Anonymous Symbol]                       0x00003980   Section        0  inv_mpu.o(.text.mpu_set_dmp_state)
-    __arm_cp.33_0                            0x00003a58   Number         4  inv_mpu.o(.text.mpu_set_dmp_state)
-    [Anonymous Symbol]                       0x00003a5c   Section        0  inv_mpu.o(.text.mpu_set_sample_rate)
-    __arm_cp.6_0                             0x00003b3c   Number         4  inv_mpu.o(.text.mpu_set_sample_rate)
-    [Anonymous Symbol]                       0x00003b40   Section        0  inv_mpu.o(.text.mpu_set_sensors)
-    [Anonymous Symbol]                       0x00003c20   Section        0  inv_mpu.o(.text.mpu_write_mem)
-    __arm_cp.35_0                            0x00003c80   Number         4  inv_mpu.o(.text.mpu_write_mem)
-    .text_divfast                            0x00003c84   Section      502  aeabi_sdivfast.o(.text_divfast)
-    i.__ARM_fpclassify                       0x00003e7c   Section        0  fpclassify.o(i.__ARM_fpclassify)
-    i.__kernel_poly                          0x00003ea8   Section        0  poly.o(i.__kernel_poly)
-    i.__mathlib_dbl_infnan                   0x00003f54   Section        0  dunder.o(i.__mathlib_dbl_infnan)
-    i.__mathlib_dbl_infnan2                  0x00003f5e   Section        0  dunder.o(i.__mathlib_dbl_infnan2)
-    i.__mathlib_dbl_invalid                  0x00003f66   Section        0  dunder.o(i.__mathlib_dbl_invalid)
-    i.__mathlib_dbl_underflow                0x00003f78   Section        0  dunder.o(i.__mathlib_dbl_underflow)
-    i._is_digit                              0x00003f8c   Section        0  __printf_wp.o(i._is_digit)
-    i.asin                                   0x00003f9c   Section        0  asin.o(i.asin)
-    i.atan                                   0x00004210   Section        0  atan.o(i.atan)
-    i.atan2                                  0x0000442c   Section        0  atan2.o(i.atan2)
-    i.sqrt                                   0x000045c8   Section        0  sqrt.o(i.sqrt)
-    x$fpl$deqf                               0x00004610   Section      100  deqf.o(x$fpl$deqf)
-    x$fpl$fadd                               0x00004674   Section      140  faddsub.o(x$fpl$fadd)
-    _fadd1                                   0x00004681   Thumb Code     0  faddsub.o(x$fpl$fadd)
-    x$fpl$fmul                               0x00004700   Section      176  fmul.o(x$fpl$fmul)
-    x$fpl$fsub                               0x000047b0   Section      208  faddsub.o(x$fpl$fsub)
-    _fsub1                                   0x000047bd   Thumb Code     0  faddsub.o(x$fpl$fsub)
-    uc_hextab                                0x00004880   Data          20  _printf_hex_int.o(.constdata)
-    .constdata                               0x00004880   Section       40  _printf_hex_int.o(.constdata)
-    x$fpl$usenofp                            0x00004880   Section        0  usenofp.o(x$fpl$usenofp)
-    lc_hextab                                0x00004894   Data          20  _printf_hex_int.o(.constdata)
-    maptable                                 0x000048a8   Data          17  __printf_flags_wp.o(.constdata)
-    .constdata                               0x000048a8   Section       17  __printf_flags_wp.o(.constdata)
-    ddiv_reciptbl                            0x000048b9   Data         128  ddiv.o(.constdata)
-    .constdata                               0x000048b9   Section      128  ddiv.o(.constdata)
-    fdiv_tab                                 0x00004939   Data          64  fdiv.o(.constdata)
-    .constdata                               0x00004939   Section       64  fdiv.o(.constdata)
-    pS                                       0x00004980   Data          48  asin.o(.constdata)
-    .constdata                               0x00004980   Section       80  asin.o(.constdata)
-    qS                                       0x000049b0   Data          32  asin.o(.constdata)
-    atanhi                                   0x000049d0   Data          32  atan.o(.constdata)
-    .constdata                               0x000049d0   Section      152  atan.o(.constdata)
-    atanlo                                   0x000049f0   Data          32  atan.o(.constdata)
-    aTodd                                    0x00004a10   Data          40  atan.o(.constdata)
-    aTeven                                   0x00004a38   Data          48  atan.o(.constdata)
-    .constdata                               0x00004a68   Section        8  qnan.o(.constdata)
-    [Anonymous Symbol]                       0x00004a70   Section        0  inv_mpu_dmp_motion_driver.o(.rodata..L__const.dmp_set_orientation.accel_axes)
-    [Anonymous Symbol]                       0x00004a73   Section        0  inv_mpu_dmp_motion_driver.o(.rodata..L__const.dmp_set_orientation.gyro_axes)
-    dmp_memory                               0x00004a76   Data        3062  inv_mpu_dmp_motion_driver.o(.rodata.dmp_memory)
-    [Anonymous Symbol]                       0x00004a76   Section        0  inv_mpu_dmp_motion_driver.o(.rodata.dmp_memory)
-    gPWM_MotorAClockConfig                   0x0000566c   Data           3  ti_msp_dl_config.o(.rodata.gPWM_MotorAClockConfig)
-    [Anonymous Symbol]                       0x0000566c   Section        0  ti_msp_dl_config.o(.rodata.gPWM_MotorAClockConfig)
-    gPWM_MotorAConfig                        0x00005670   Data           8  ti_msp_dl_config.o(.rodata.gPWM_MotorAConfig)
-    [Anonymous Symbol]                       0x00005670   Section        0  ti_msp_dl_config.o(.rodata.gPWM_MotorAConfig)
-    gPWM_MotorBClockConfig                   0x00005678   Data           3  ti_msp_dl_config.o(.rodata.gPWM_MotorBClockConfig)
-    [Anonymous Symbol]                       0x00005678   Section        0  ti_msp_dl_config.o(.rodata.gPWM_MotorBClockConfig)
-    gPWM_MotorBConfig                        0x0000567c   Data           8  ti_msp_dl_config.o(.rodata.gPWM_MotorBConfig)
-    [Anonymous Symbol]                       0x0000567c   Section        0  ti_msp_dl_config.o(.rodata.gPWM_MotorBConfig)
-    gTIMER_0ClockConfig                      0x00005684   Data           3  ti_msp_dl_config.o(.rodata.gTIMER_0ClockConfig)
-    [Anonymous Symbol]                       0x00005684   Section        0  ti_msp_dl_config.o(.rodata.gTIMER_0ClockConfig)
-    gTIMER_0TimerConfig                      0x00005688   Data          20  ti_msp_dl_config.o(.rodata.gTIMER_0TimerConfig)
-    [Anonymous Symbol]                       0x00005688   Section        0  ti_msp_dl_config.o(.rodata.gTIMER_0TimerConfig)
-    gUART_TransClockConfig                   0x0000569c   Data           2  ti_msp_dl_config.o(.rodata.gUART_TransClockConfig)
-    [Anonymous Symbol]                       0x0000569c   Section        0  ti_msp_dl_config.o(.rodata.gUART_TransClockConfig)
-    gUART_TransConfig                        0x0000569e   Data          10  ti_msp_dl_config.o(.rodata.gUART_TransConfig)
-    [Anonymous Symbol]                       0x0000569e   Section        0  ti_msp_dl_config.o(.rodata.gUART_TransConfig)
-    gUSB_TLLClockConfig                      0x000056a8   Data           2  ti_msp_dl_config.o(.rodata.gUSB_TLLClockConfig)
-    [Anonymous Symbol]                       0x000056a8   Section        0  ti_msp_dl_config.o(.rodata.gUSB_TLLClockConfig)
-    gUSB_TLLConfig                           0x000056aa   Data          10  ti_msp_dl_config.o(.rodata.gUSB_TLLConfig)
-    [Anonymous Symbol]                       0x000056aa   Section        0  ti_msp_dl_config.o(.rodata.gUSB_TLLConfig)
-    [Anonymous Symbol]                       0x000056db   Section        0  mpu6050.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x00005712   Section        0  inv_mpu.o(.rodata.str1.1)
+    __arm_cp.0_0                             0x00002e18   Number         4  empty.o(.text.main)
+    __arm_cp.0_1                             0x00002e1c   Number         4  empty.o(.text.main)
+    __arm_cp.0_2                             0x00002e20   Number         4  empty.o(.text.main)
+    [Anonymous Symbol]                       0x00002e68   Section        0  inv_mpu.o(.text.mget_ms)
+    [Anonymous Symbol]                       0x00002e6c   Section        0  inv_mpu.o(.text.mpu_configure_fifo)
+    [Anonymous Symbol]                       0x00002f00   Section        0  inv_mpu.o(.text.mpu_dmp_get_data)
+    __arm_cp.47_0                            0x000030bc   Number         4  inv_mpu.o(.text.mpu_dmp_get_data)
+    __arm_cp.47_1                            0x000030c0   Number         4  inv_mpu.o(.text.mpu_dmp_get_data)
+    [Anonymous Symbol]                       0x000030c4   Section        0  inv_mpu.o(.text.mpu_dmp_init)
+    [Anonymous Symbol]                       0x00003144   Section        0  inv_mpu.o(.text.mpu_get_accel_fsr)
+    __arm_cp.19_0                            0x0000316c   Number         4  inv_mpu.o(.text.mpu_get_accel_fsr)
+    __arm_cp.19_1                            0x00003170   Number         4  inv_mpu.o(.text.mpu_get_accel_fsr)
+    __arm_cp.19_2                            0x00003174   Number         4  inv_mpu.o(.text.mpu_get_accel_fsr)
+    [Anonymous Symbol]                       0x00003178   Section        0  inv_mpu.o(.text.mpu_init)
+    __arm_cp.2_0                             0x00003308   Number         4  inv_mpu.o(.text.mpu_init)
+    __arm_cp.2_3                             0x00003354   Number         4  inv_mpu.o(.text.mpu_init)
+    __arm_cp.2_4                             0x00003358   Number         4  inv_mpu.o(.text.mpu_init)
+    [Anonymous Symbol]                       0x0000335c   Section        0  inv_mpu.o(.text.mpu_load_firmware)
+    __arm_cp.37_0                            0x00003480   Number         4  inv_mpu.o(.text.mpu_load_firmware)
+    [Anonymous Symbol]                       0x00003484   Section        0  inv_mpu.o(.text.mpu_lp_accel_mode)
+    [Anonymous Symbol]                       0x0000367c   Section        0  inv_mpu.o(.text.mpu_read_fifo_stream)
+    __arm_cp.30_0                            0x0000371c   Number         4  inv_mpu.o(.text.mpu_read_fifo_stream)
+    [Anonymous Symbol]                       0x00003720   Section        0  inv_mpu.o(.text.mpu_reset_fifo)
+    __arm_cp.17_0                            0x00003868   Number         4  inv_mpu.o(.text.mpu_reset_fifo)
+    [Anonymous Symbol]                       0x0000386c   Section        0  inv_mpu.o(.text.mpu_set_bypass)
+    [Anonymous Symbol]                       0x00003948   Section        0  inv_mpu.o(.text.mpu_set_dmp_state)
+    __arm_cp.33_0                            0x00003a20   Number         4  inv_mpu.o(.text.mpu_set_dmp_state)
+    [Anonymous Symbol]                       0x00003a24   Section        0  inv_mpu.o(.text.mpu_set_sample_rate)
+    __arm_cp.6_0                             0x00003b04   Number         4  inv_mpu.o(.text.mpu_set_sample_rate)
+    [Anonymous Symbol]                       0x00003b08   Section        0  inv_mpu.o(.text.mpu_set_sensors)
+    [Anonymous Symbol]                       0x00003be8   Section        0  inv_mpu.o(.text.mpu_write_mem)
+    __arm_cp.35_0                            0x00003c48   Number         4  inv_mpu.o(.text.mpu_write_mem)
+    .text_divfast                            0x00003c4c   Section      502  aeabi_sdivfast.o(.text_divfast)
+    i.__ARM_fpclassify                       0x00003e44   Section        0  fpclassify.o(i.__ARM_fpclassify)
+    i.__kernel_poly                          0x00003e70   Section        0  poly.o(i.__kernel_poly)
+    i.__mathlib_dbl_infnan                   0x00003f1c   Section        0  dunder.o(i.__mathlib_dbl_infnan)
+    i.__mathlib_dbl_infnan2                  0x00003f26   Section        0  dunder.o(i.__mathlib_dbl_infnan2)
+    i.__mathlib_dbl_invalid                  0x00003f2e   Section        0  dunder.o(i.__mathlib_dbl_invalid)
+    i.__mathlib_dbl_underflow                0x00003f40   Section        0  dunder.o(i.__mathlib_dbl_underflow)
+    i._is_digit                              0x00003f54   Section        0  __printf_wp.o(i._is_digit)
+    i.asin                                   0x00003f64   Section        0  asin.o(i.asin)
+    i.atan                                   0x000041d8   Section        0  atan.o(i.atan)
+    i.atan2                                  0x000043f4   Section        0  atan2.o(i.atan2)
+    i.sqrt                                   0x00004590   Section        0  sqrt.o(i.sqrt)
+    x$fpl$deqf                               0x000045d8   Section      100  deqf.o(x$fpl$deqf)
+    x$fpl$fadd                               0x0000463c   Section      140  faddsub.o(x$fpl$fadd)
+    _fadd1                                   0x00004649   Thumb Code     0  faddsub.o(x$fpl$fadd)
+    x$fpl$fmul                               0x000046c8   Section      176  fmul.o(x$fpl$fmul)
+    x$fpl$fsub                               0x00004778   Section      208  faddsub.o(x$fpl$fsub)
+    _fsub1                                   0x00004785   Thumb Code     0  faddsub.o(x$fpl$fsub)
+    uc_hextab                                0x00004848   Data          20  _printf_hex_int.o(.constdata)
+    .constdata                               0x00004848   Section       40  _printf_hex_int.o(.constdata)
+    x$fpl$usenofp                            0x00004848   Section        0  usenofp.o(x$fpl$usenofp)
+    lc_hextab                                0x0000485c   Data          20  _printf_hex_int.o(.constdata)
+    maptable                                 0x00004870   Data          17  __printf_flags_wp.o(.constdata)
+    .constdata                               0x00004870   Section       17  __printf_flags_wp.o(.constdata)
+    ddiv_reciptbl                            0x00004881   Data         128  ddiv.o(.constdata)
+    .constdata                               0x00004881   Section      128  ddiv.o(.constdata)
+    fdiv_tab                                 0x00004901   Data          64  fdiv.o(.constdata)
+    .constdata                               0x00004901   Section       64  fdiv.o(.constdata)
+    pS                                       0x00004948   Data          48  asin.o(.constdata)
+    .constdata                               0x00004948   Section       80  asin.o(.constdata)
+    qS                                       0x00004978   Data          32  asin.o(.constdata)
+    atanhi                                   0x00004998   Data          32  atan.o(.constdata)
+    .constdata                               0x00004998   Section      152  atan.o(.constdata)
+    atanlo                                   0x000049b8   Data          32  atan.o(.constdata)
+    aTodd                                    0x000049d8   Data          40  atan.o(.constdata)
+    aTeven                                   0x00004a00   Data          48  atan.o(.constdata)
+    .constdata                               0x00004a30   Section        8  qnan.o(.constdata)
+    [Anonymous Symbol]                       0x00004a38   Section        0  inv_mpu_dmp_motion_driver.o(.rodata..L__const.dmp_set_orientation.accel_axes)
+    [Anonymous Symbol]                       0x00004a3b   Section        0  inv_mpu_dmp_motion_driver.o(.rodata..L__const.dmp_set_orientation.gyro_axes)
+    dmp_memory                               0x00004a3e   Data        3062  inv_mpu_dmp_motion_driver.o(.rodata.dmp_memory)
+    [Anonymous Symbol]                       0x00004a3e   Section        0  inv_mpu_dmp_motion_driver.o(.rodata.dmp_memory)
+    gPWM_MotorAClockConfig                   0x00005634   Data           3  ti_msp_dl_config.o(.rodata.gPWM_MotorAClockConfig)
+    [Anonymous Symbol]                       0x00005634   Section        0  ti_msp_dl_config.o(.rodata.gPWM_MotorAClockConfig)
+    gPWM_MotorAConfig                        0x00005638   Data           8  ti_msp_dl_config.o(.rodata.gPWM_MotorAConfig)
+    [Anonymous Symbol]                       0x00005638   Section        0  ti_msp_dl_config.o(.rodata.gPWM_MotorAConfig)
+    gPWM_MotorBClockConfig                   0x00005640   Data           3  ti_msp_dl_config.o(.rodata.gPWM_MotorBClockConfig)
+    [Anonymous Symbol]                       0x00005640   Section        0  ti_msp_dl_config.o(.rodata.gPWM_MotorBClockConfig)
+    gPWM_MotorBConfig                        0x00005644   Data           8  ti_msp_dl_config.o(.rodata.gPWM_MotorBConfig)
+    [Anonymous Symbol]                       0x00005644   Section        0  ti_msp_dl_config.o(.rodata.gPWM_MotorBConfig)
+    gTIMER_0ClockConfig                      0x0000564c   Data           3  ti_msp_dl_config.o(.rodata.gTIMER_0ClockConfig)
+    [Anonymous Symbol]                       0x0000564c   Section        0  ti_msp_dl_config.o(.rodata.gTIMER_0ClockConfig)
+    gTIMER_0TimerConfig                      0x00005650   Data          20  ti_msp_dl_config.o(.rodata.gTIMER_0TimerConfig)
+    [Anonymous Symbol]                       0x00005650   Section        0  ti_msp_dl_config.o(.rodata.gTIMER_0TimerConfig)
+    gUART_TransClockConfig                   0x00005664   Data           2  ti_msp_dl_config.o(.rodata.gUART_TransClockConfig)
+    [Anonymous Symbol]                       0x00005664   Section        0  ti_msp_dl_config.o(.rodata.gUART_TransClockConfig)
+    gUART_TransConfig                        0x00005666   Data          10  ti_msp_dl_config.o(.rodata.gUART_TransConfig)
+    [Anonymous Symbol]                       0x00005666   Section        0  ti_msp_dl_config.o(.rodata.gUART_TransConfig)
+    gUSB_TLLClockConfig                      0x00005670   Data           2  ti_msp_dl_config.o(.rodata.gUSB_TLLClockConfig)
+    [Anonymous Symbol]                       0x00005670   Section        0  ti_msp_dl_config.o(.rodata.gUSB_TLLClockConfig)
+    gUSB_TLLConfig                           0x00005672   Data          10  ti_msp_dl_config.o(.rodata.gUSB_TLLConfig)
+    [Anonymous Symbol]                       0x00005672   Section        0  ti_msp_dl_config.o(.rodata.gUSB_TLLConfig)
+    [Anonymous Symbol]                       0x000056a3   Section        0  mpu6050.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x000056da   Section        0  inv_mpu.o(.rodata.str1.1)
     st                                       0x20200000   Data          44  inv_mpu.o(.data.st)
     [Anonymous Symbol]                       0x20200000   Section        0  inv_mpu.o(.data.st)
     .bss                                     0x20200030   Section       96  libspace.o(.bss)
@@ -3701,50 +3700,50 @@ Image Symbol Table
     dmp_set_orientation                      0x00002b51   Thumb Code   192  inv_mpu_dmp_motion_driver.o(.text.dmp_set_orientation)
     dmp_set_tap_thresh                       0x00002c29   Thumb Code   304  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_thresh)
     fputc                                    0x00002d6d   Thumb Code    16  board.o(.text.fputc)
-    main                                     0x00002d81   Thumb Code   176  empty.o(.text.main)
-    mget_ms                                  0x00002ea1   Thumb Code     2  inv_mpu.o(.text.mget_ms)
-    mpu_configure_fifo                       0x00002ea5   Thumb Code   148  inv_mpu.o(.text.mpu_configure_fifo)
-    mpu_dmp_get_data                         0x00002f39   Thumb Code   444  inv_mpu.o(.text.mpu_dmp_get_data)
-    mpu_dmp_init                             0x000030fd   Thumb Code   126  inv_mpu.o(.text.mpu_dmp_init)
-    mpu_get_accel_fsr                        0x0000317d   Thumb Code    40  inv_mpu.o(.text.mpu_get_accel_fsr)
-    mpu_init                                 0x000031b1   Thumb Code   400  inv_mpu.o(.text.mpu_init)
-    mpu_load_firmware                        0x00003395   Thumb Code   292  inv_mpu.o(.text.mpu_load_firmware)
-    mpu_lp_accel_mode                        0x000034bd   Thumb Code   504  inv_mpu.o(.text.mpu_lp_accel_mode)
-    mpu_read_fifo_stream                     0x000036b5   Thumb Code   160  inv_mpu.o(.text.mpu_read_fifo_stream)
-    mpu_reset_fifo                           0x00003759   Thumb Code   328  inv_mpu.o(.text.mpu_reset_fifo)
-    mpu_set_bypass                           0x000038a5   Thumb Code   220  inv_mpu.o(.text.mpu_set_bypass)
-    mpu_set_dmp_state                        0x00003981   Thumb Code   216  inv_mpu.o(.text.mpu_set_dmp_state)
-    mpu_set_sample_rate                      0x00003a5d   Thumb Code   224  inv_mpu.o(.text.mpu_set_sample_rate)
-    mpu_set_sensors                          0x00003b41   Thumb Code   224  inv_mpu.o(.text.mpu_set_sensors)
-    mpu_write_mem                            0x00003c21   Thumb Code    96  inv_mpu.o(.text.mpu_write_mem)
-    __aeabi_uidiv                            0x00003c85   Thumb Code    68  aeabi_sdivfast.o(.text_divfast)
-    __aeabi_idiv                             0x00003cc9   Thumb Code   434  aeabi_sdivfast.o(.text_divfast)
-    __ARM_fpclassify                         0x00003e7d   Thumb Code    40  fpclassify.o(i.__ARM_fpclassify)
-    __kernel_poly                            0x00003ea9   Thumb Code   172  poly.o(i.__kernel_poly)
-    __mathlib_dbl_infnan                     0x00003f55   Thumb Code    10  dunder.o(i.__mathlib_dbl_infnan)
-    __mathlib_dbl_infnan2                    0x00003f5f   Thumb Code     8  dunder.o(i.__mathlib_dbl_infnan2)
-    __mathlib_dbl_invalid                    0x00003f67   Thumb Code    16  dunder.o(i.__mathlib_dbl_invalid)
-    __mathlib_dbl_underflow                  0x00003f79   Thumb Code    14  dunder.o(i.__mathlib_dbl_underflow)
-    _is_digit                                0x00003f8d   Thumb Code    14  __printf_wp.o(i._is_digit)
-    asin                                     0x00003f9d   Thumb Code   574  asin.o(i.asin)
-    atan                                     0x00004211   Thumb Code   472  atan.o(i.atan)
-    atan2                                    0x0000442d   Thumb Code   372  atan2.o(i.atan2)
-    sqrt                                     0x000045c9   Thumb Code    66  sqrt.o(i.sqrt)
-    __aeabi_cdcmpeq                          0x00004611   Thumb Code     0  deqf.o(x$fpl$deqf)
-    _dcmpeq                                  0x00004611   Thumb Code    94  deqf.o(x$fpl$deqf)
-    __aeabi_fadd                             0x00004675   Thumb Code     0  faddsub.o(x$fpl$fadd)
-    _fadd                                    0x00004675   Thumb Code   134  faddsub.o(x$fpl$fadd)
-    __aeabi_fmul                             0x00004701   Thumb Code     0  fmul.o(x$fpl$fmul)
-    _fmul                                    0x00004701   Thumb Code   172  fmul.o(x$fpl$fmul)
-    __aeabi_fsub                             0x000047b1   Thumb Code     0  faddsub.o(x$fpl$fsub)
-    _fsub                                    0x000047b1   Thumb Code   204  faddsub.o(x$fpl$fsub)
-    __I$use$fp                               0x00004880   Number         0  usenofp.o(x$fpl$usenofp)
-    __mathlib_zero                           0x00004a68   Data           8  qnan.o(.constdata)
-    hw                                       0x000056b4   Data          12  inv_mpu.o(.rodata.hw)
-    reg                                      0x000056c0   Data          27  inv_mpu.o(.rodata.reg)
-    test                                     0x00005760   Data          40  inv_mpu.o(.rodata.test)
-    Region$$Table$$Base                      0x00005788   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x000057a8   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x00002d81   Thumb Code   152  empty.o(.text.main)
+    mget_ms                                  0x00002e69   Thumb Code     2  inv_mpu.o(.text.mget_ms)
+    mpu_configure_fifo                       0x00002e6d   Thumb Code   148  inv_mpu.o(.text.mpu_configure_fifo)
+    mpu_dmp_get_data                         0x00002f01   Thumb Code   444  inv_mpu.o(.text.mpu_dmp_get_data)
+    mpu_dmp_init                             0x000030c5   Thumb Code   126  inv_mpu.o(.text.mpu_dmp_init)
+    mpu_get_accel_fsr                        0x00003145   Thumb Code    40  inv_mpu.o(.text.mpu_get_accel_fsr)
+    mpu_init                                 0x00003179   Thumb Code   400  inv_mpu.o(.text.mpu_init)
+    mpu_load_firmware                        0x0000335d   Thumb Code   292  inv_mpu.o(.text.mpu_load_firmware)
+    mpu_lp_accel_mode                        0x00003485   Thumb Code   504  inv_mpu.o(.text.mpu_lp_accel_mode)
+    mpu_read_fifo_stream                     0x0000367d   Thumb Code   160  inv_mpu.o(.text.mpu_read_fifo_stream)
+    mpu_reset_fifo                           0x00003721   Thumb Code   328  inv_mpu.o(.text.mpu_reset_fifo)
+    mpu_set_bypass                           0x0000386d   Thumb Code   220  inv_mpu.o(.text.mpu_set_bypass)
+    mpu_set_dmp_state                        0x00003949   Thumb Code   216  inv_mpu.o(.text.mpu_set_dmp_state)
+    mpu_set_sample_rate                      0x00003a25   Thumb Code   224  inv_mpu.o(.text.mpu_set_sample_rate)
+    mpu_set_sensors                          0x00003b09   Thumb Code   224  inv_mpu.o(.text.mpu_set_sensors)
+    mpu_write_mem                            0x00003be9   Thumb Code    96  inv_mpu.o(.text.mpu_write_mem)
+    __aeabi_uidiv                            0x00003c4d   Thumb Code    68  aeabi_sdivfast.o(.text_divfast)
+    __aeabi_idiv                             0x00003c91   Thumb Code   434  aeabi_sdivfast.o(.text_divfast)
+    __ARM_fpclassify                         0x00003e45   Thumb Code    40  fpclassify.o(i.__ARM_fpclassify)
+    __kernel_poly                            0x00003e71   Thumb Code   172  poly.o(i.__kernel_poly)
+    __mathlib_dbl_infnan                     0x00003f1d   Thumb Code    10  dunder.o(i.__mathlib_dbl_infnan)
+    __mathlib_dbl_infnan2                    0x00003f27   Thumb Code     8  dunder.o(i.__mathlib_dbl_infnan2)
+    __mathlib_dbl_invalid                    0x00003f2f   Thumb Code    16  dunder.o(i.__mathlib_dbl_invalid)
+    __mathlib_dbl_underflow                  0x00003f41   Thumb Code    14  dunder.o(i.__mathlib_dbl_underflow)
+    _is_digit                                0x00003f55   Thumb Code    14  __printf_wp.o(i._is_digit)
+    asin                                     0x00003f65   Thumb Code   574  asin.o(i.asin)
+    atan                                     0x000041d9   Thumb Code   472  atan.o(i.atan)
+    atan2                                    0x000043f5   Thumb Code   372  atan2.o(i.atan2)
+    sqrt                                     0x00004591   Thumb Code    66  sqrt.o(i.sqrt)
+    __aeabi_cdcmpeq                          0x000045d9   Thumb Code     0  deqf.o(x$fpl$deqf)
+    _dcmpeq                                  0x000045d9   Thumb Code    94  deqf.o(x$fpl$deqf)
+    __aeabi_fadd                             0x0000463d   Thumb Code     0  faddsub.o(x$fpl$fadd)
+    _fadd                                    0x0000463d   Thumb Code   134  faddsub.o(x$fpl$fadd)
+    __aeabi_fmul                             0x000046c9   Thumb Code     0  fmul.o(x$fpl$fmul)
+    _fmul                                    0x000046c9   Thumb Code   172  fmul.o(x$fpl$fmul)
+    __aeabi_fsub                             0x00004779   Thumb Code     0  faddsub.o(x$fpl$fsub)
+    _fsub                                    0x00004779   Thumb Code   204  faddsub.o(x$fpl$fsub)
+    __I$use$fp                               0x00004848   Number         0  usenofp.o(x$fpl$usenofp)
+    __mathlib_zero                           0x00004a30   Data           8  qnan.o(.constdata)
+    hw                                       0x0000567c   Data          12  inv_mpu.o(.rodata.hw)
+    reg                                      0x00005688   Data          27  inv_mpu.o(.rodata.reg)
+    test                                     0x00005728   Data          40  inv_mpu.o(.rodata.test)
+    Region$$Table$$Base                      0x00005750   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00005770   Number         0  anon$$obj.o(Region$$Table)
     __libspace_start                         0x20200030   Data          96  libspace.o(.bss)
     BLERX_BUFF                               0x20200090   Data         200  bluebooth.o(.bss.BLERX_BUFF)
     __temporary_stack_top$libspace           0x20200090   Data           0  libspace.o(.bss)
@@ -3764,9 +3763,9 @@ Memory Map of the image
 
   Image Entry point : 0x000000c1
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x000057d8, Max: 0x00020000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x000057a0, Max: 0x00020000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x000057a8, Max: 0x00020000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00005770, Max: 0x00020000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -3903,103 +3902,103 @@ Memory Map of the image
     0x00002b50   0x00002b50   0x000000d8   Code   RO          379    .text.dmp_set_orientation  inv_mpu_dmp_motion_driver.o
     0x00002c28   0x00002c28   0x00000144   Code   RO          389    .text.dmp_set_tap_thresh  inv_mpu_dmp_motion_driver.o
     0x00002d6c   0x00002d6c   0x00000014   Code   RO           88    .text.fputc         board.o
-    0x00002d80   0x00002d80   0x00000120   Code   RO            2    .text.main          empty.o
-    0x00002ea0   0x00002ea0   0x00000002   Code   RO          294    .text.mget_ms       inv_mpu.o
-    0x00002ea2   0x00002ea2   0x00000002   PAD
-    0x00002ea4   0x00002ea4   0x00000094   Code   RO          282    .text.mpu_configure_fifo  inv_mpu.o
-    0x00002f38   0x00002f38   0x000001c4   Code   RO          362    .text.mpu_dmp_get_data  inv_mpu.o
-    0x000030fc   0x000030fc   0x0000007e   Code   RO          360    .text.mpu_dmp_init  inv_mpu.o
-    0x0000317a   0x0000317a   0x00000002   PAD
-    0x0000317c   0x0000317c   0x00000034   Code   RO          306    .text.mpu_get_accel_fsr  inv_mpu.o
-    0x000031b0   0x000031b0   0x000001e4   Code   RO          272    .text.mpu_init      inv_mpu.o
-    0x00003394   0x00003394   0x00000128   Code   RO          342    .text.mpu_load_firmware  inv_mpu.o
-    0x000034bc   0x000034bc   0x000001f8   Code   RO          288    .text.mpu_lp_accel_mode  inv_mpu.o
-    0x000036b4   0x000036b4   0x000000a4   Code   RO          328    .text.mpu_read_fifo_stream  inv_mpu.o
-    0x00003758   0x00003758   0x0000014c   Code   RO          302    .text.mpu_reset_fifo  inv_mpu.o
-    0x000038a4   0x000038a4   0x000000dc   Code   RO          284    .text.mpu_set_bypass  inv_mpu.o
-    0x00003980   0x00003980   0x000000dc   Code   RO          334    .text.mpu_set_dmp_state  inv_mpu.o
-    0x00003a5c   0x00003a5c   0x000000e4   Code   RO          280    .text.mpu_set_sample_rate  inv_mpu.o
-    0x00003b40   0x00003b40   0x000000e0   Code   RO          286    .text.mpu_set_sensors  inv_mpu.o
-    0x00003c20   0x00003c20   0x00000064   Code   RO          338    .text.mpu_write_mem  inv_mpu.o
-    0x00003c84   0x00003c84   0x000001f6   Code   RO         1236    .text_divfast       c_p.l(aeabi_sdivfast.o)
-    0x00003e7a   0x00003e7a   0x00000002   PAD
-    0x00003e7c   0x00003e7c   0x0000002c   Code   RO         1350    i.__ARM_fpclassify  m_ps.l(fpclassify.o)
-    0x00003ea8   0x00003ea8   0x000000ac   Code   RO         1352    i.__kernel_poly     m_ps.l(poly.o)
-    0x00003f54   0x00003f54   0x0000000a   Code   RO         1337    i.__mathlib_dbl_infnan  m_ps.l(dunder.o)
-    0x00003f5e   0x00003f5e   0x00000008   Code   RO         1338    i.__mathlib_dbl_infnan2  m_ps.l(dunder.o)
-    0x00003f66   0x00003f66   0x00000010   Code   RO         1339    i.__mathlib_dbl_invalid  m_ps.l(dunder.o)
-    0x00003f76   0x00003f76   0x00000002   PAD
-    0x00003f78   0x00003f78   0x00000014   Code   RO         1342    i.__mathlib_dbl_underflow  m_ps.l(dunder.o)
-    0x00003f8c   0x00003f8c   0x0000000e   Code   RO         1213    i._is_digit         c_p.l(__printf_wp.o)
-    0x00003f9a   0x00003f9a   0x00000002   PAD
-    0x00003f9c   0x00003f9c   0x00000274   Code   RO         1290    i.asin              m_ps.l(asin.o)
-    0x00004210   0x00004210   0x0000021c   Code   RO         1332    i.atan              m_ps.l(atan.o)
-    0x0000442c   0x0000442c   0x0000019c   Code   RO         1295    i.atan2             m_ps.l(atan2.o)
-    0x000045c8   0x000045c8   0x00000048   Code   RO         1356    i.sqrt              m_ps.l(sqrt.o)
-    0x00004610   0x00004610   0x00000064   Code   RO         1320    x$fpl$deqf          fz_ps.l(deqf.o)
-    0x00004674   0x00004674   0x0000008c   Code   RO         1260    x$fpl$fadd          fz_ps.l(faddsub.o)
-    0x00004700   0x00004700   0x000000b0   Code   RO         1287    x$fpl$fmul          fz_ps.l(fmul.o)
-    0x000047b0   0x000047b0   0x000000d0   Code   RO         1262    x$fpl$fsub          fz_ps.l(faddsub.o)
-    0x00004880   0x00004880   0x00000000   Code   RO         1330    x$fpl$usenofp       fz_ps.l(usenofp.o)
-    0x00004880   0x00004880   0x00000028   Data   RO         1186    .constdata          c_p.l(_printf_hex_int.o)
-    0x000048a8   0x000048a8   0x00000011   Data   RO         1216    .constdata          c_p.l(__printf_flags_wp.o)
-    0x000048b9   0x000048b9   0x00000080   Data   RO         1252    .constdata          fz_ps.l(ddiv.o)
-    0x00004939   0x00004939   0x00000040   Data   RO         1279    .constdata          fz_ps.l(fdiv.o)
-    0x00004979   0x00004979   0x00000007   PAD
-    0x00004980   0x00004980   0x00000050   Data   RO         1291    .constdata          m_ps.l(asin.o)
-    0x000049d0   0x000049d0   0x00000098   Data   RO         1333    .constdata          m_ps.l(atan.o)
-    0x00004a68   0x00004a68   0x00000008   Data   RO         1354    .constdata          m_ps.l(qnan.o)
-    0x00004a70   0x00004a70   0x00000003   Data   RO          433    .rodata..L__const.dmp_set_orientation.accel_axes  inv_mpu_dmp_motion_driver.o
-    0x00004a73   0x00004a73   0x00000003   Data   RO          432    .rodata..L__const.dmp_set_orientation.gyro_axes  inv_mpu_dmp_motion_driver.o
-    0x00004a76   0x00004a76   0x00000bf6   Data   RO          431    .rodata.dmp_memory  inv_mpu_dmp_motion_driver.o
-    0x0000566c   0x0000566c   0x00000003   Data   RO           52    .rodata.gPWM_MotorAClockConfig  ti_msp_dl_config.o
-    0x0000566f   0x0000566f   0x00000001   PAD
-    0x00005670   0x00005670   0x00000008   Data   RO           53    .rodata.gPWM_MotorAConfig  ti_msp_dl_config.o
-    0x00005678   0x00005678   0x00000003   Data   RO           50    .rodata.gPWM_MotorBClockConfig  ti_msp_dl_config.o
-    0x0000567b   0x0000567b   0x00000001   PAD
-    0x0000567c   0x0000567c   0x00000008   Data   RO           51    .rodata.gPWM_MotorBConfig  ti_msp_dl_config.o
-    0x00005684   0x00005684   0x00000003   Data   RO           54    .rodata.gTIMER_0ClockConfig  ti_msp_dl_config.o
-    0x00005687   0x00005687   0x00000001   PAD
-    0x00005688   0x00005688   0x00000014   Data   RO           55    .rodata.gTIMER_0TimerConfig  ti_msp_dl_config.o
-    0x0000569c   0x0000569c   0x00000002   Data   RO           58    .rodata.gUART_TransClockConfig  ti_msp_dl_config.o
-    0x0000569e   0x0000569e   0x0000000a   Data   RO           59    .rodata.gUART_TransConfig  ti_msp_dl_config.o
-    0x000056a8   0x000056a8   0x00000002   Data   RO           56    .rodata.gUSB_TLLClockConfig  ti_msp_dl_config.o
-    0x000056aa   0x000056aa   0x0000000a   Data   RO           57    .rodata.gUSB_TLLConfig  ti_msp_dl_config.o
-    0x000056b4   0x000056b4   0x0000000c   Data   RO          365    .rodata.hw          inv_mpu.o
-    0x000056c0   0x000056c0   0x0000001b   Data   RO          364    .rodata.reg         inv_mpu.o
-    0x000056db   0x000056db   0x00000037   Data   RO          259    .rodata.str1.1      mpu6050.o
-    0x00005712   0x00005712   0x0000004c   Data   RO          368    .rodata.str1.1      inv_mpu.o
-    0x0000575e   0x0000575e   0x00000002   PAD
-    0x00005760   0x00005760   0x00000028   Data   RO          366    .rodata.test        inv_mpu.o
-    0x00005788   0x00005788   0x00000020   Data   RO         1549    Region$$Table       anon$$obj.o
+    0x00002d80   0x00002d80   0x000000e8   Code   RO            2    .text.main          empty.o
+    0x00002e68   0x00002e68   0x00000002   Code   RO          294    .text.mget_ms       inv_mpu.o
+    0x00002e6a   0x00002e6a   0x00000002   PAD
+    0x00002e6c   0x00002e6c   0x00000094   Code   RO          282    .text.mpu_configure_fifo  inv_mpu.o
+    0x00002f00   0x00002f00   0x000001c4   Code   RO          362    .text.mpu_dmp_get_data  inv_mpu.o
+    0x000030c4   0x000030c4   0x0000007e   Code   RO          360    .text.mpu_dmp_init  inv_mpu.o
+    0x00003142   0x00003142   0x00000002   PAD
+    0x00003144   0x00003144   0x00000034   Code   RO          306    .text.mpu_get_accel_fsr  inv_mpu.o
+    0x00003178   0x00003178   0x000001e4   Code   RO          272    .text.mpu_init      inv_mpu.o
+    0x0000335c   0x0000335c   0x00000128   Code   RO          342    .text.mpu_load_firmware  inv_mpu.o
+    0x00003484   0x00003484   0x000001f8   Code   RO          288    .text.mpu_lp_accel_mode  inv_mpu.o
+    0x0000367c   0x0000367c   0x000000a4   Code   RO          328    .text.mpu_read_fifo_stream  inv_mpu.o
+    0x00003720   0x00003720   0x0000014c   Code   RO          302    .text.mpu_reset_fifo  inv_mpu.o
+    0x0000386c   0x0000386c   0x000000dc   Code   RO          284    .text.mpu_set_bypass  inv_mpu.o
+    0x00003948   0x00003948   0x000000dc   Code   RO          334    .text.mpu_set_dmp_state  inv_mpu.o
+    0x00003a24   0x00003a24   0x000000e4   Code   RO          280    .text.mpu_set_sample_rate  inv_mpu.o
+    0x00003b08   0x00003b08   0x000000e0   Code   RO          286    .text.mpu_set_sensors  inv_mpu.o
+    0x00003be8   0x00003be8   0x00000064   Code   RO          338    .text.mpu_write_mem  inv_mpu.o
+    0x00003c4c   0x00003c4c   0x000001f6   Code   RO         1236    .text_divfast       c_p.l(aeabi_sdivfast.o)
+    0x00003e42   0x00003e42   0x00000002   PAD
+    0x00003e44   0x00003e44   0x0000002c   Code   RO         1350    i.__ARM_fpclassify  m_ps.l(fpclassify.o)
+    0x00003e70   0x00003e70   0x000000ac   Code   RO         1352    i.__kernel_poly     m_ps.l(poly.o)
+    0x00003f1c   0x00003f1c   0x0000000a   Code   RO         1337    i.__mathlib_dbl_infnan  m_ps.l(dunder.o)
+    0x00003f26   0x00003f26   0x00000008   Code   RO         1338    i.__mathlib_dbl_infnan2  m_ps.l(dunder.o)
+    0x00003f2e   0x00003f2e   0x00000010   Code   RO         1339    i.__mathlib_dbl_invalid  m_ps.l(dunder.o)
+    0x00003f3e   0x00003f3e   0x00000002   PAD
+    0x00003f40   0x00003f40   0x00000014   Code   RO         1342    i.__mathlib_dbl_underflow  m_ps.l(dunder.o)
+    0x00003f54   0x00003f54   0x0000000e   Code   RO         1213    i._is_digit         c_p.l(__printf_wp.o)
+    0x00003f62   0x00003f62   0x00000002   PAD
+    0x00003f64   0x00003f64   0x00000274   Code   RO         1290    i.asin              m_ps.l(asin.o)
+    0x000041d8   0x000041d8   0x0000021c   Code   RO         1332    i.atan              m_ps.l(atan.o)
+    0x000043f4   0x000043f4   0x0000019c   Code   RO         1295    i.atan2             m_ps.l(atan2.o)
+    0x00004590   0x00004590   0x00000048   Code   RO         1356    i.sqrt              m_ps.l(sqrt.o)
+    0x000045d8   0x000045d8   0x00000064   Code   RO         1320    x$fpl$deqf          fz_ps.l(deqf.o)
+    0x0000463c   0x0000463c   0x0000008c   Code   RO         1260    x$fpl$fadd          fz_ps.l(faddsub.o)
+    0x000046c8   0x000046c8   0x000000b0   Code   RO         1287    x$fpl$fmul          fz_ps.l(fmul.o)
+    0x00004778   0x00004778   0x000000d0   Code   RO         1262    x$fpl$fsub          fz_ps.l(faddsub.o)
+    0x00004848   0x00004848   0x00000000   Code   RO         1330    x$fpl$usenofp       fz_ps.l(usenofp.o)
+    0x00004848   0x00004848   0x00000028   Data   RO         1186    .constdata          c_p.l(_printf_hex_int.o)
+    0x00004870   0x00004870   0x00000011   Data   RO         1216    .constdata          c_p.l(__printf_flags_wp.o)
+    0x00004881   0x00004881   0x00000080   Data   RO         1252    .constdata          fz_ps.l(ddiv.o)
+    0x00004901   0x00004901   0x00000040   Data   RO         1279    .constdata          fz_ps.l(fdiv.o)
+    0x00004941   0x00004941   0x00000007   PAD
+    0x00004948   0x00004948   0x00000050   Data   RO         1291    .constdata          m_ps.l(asin.o)
+    0x00004998   0x00004998   0x00000098   Data   RO         1333    .constdata          m_ps.l(atan.o)
+    0x00004a30   0x00004a30   0x00000008   Data   RO         1354    .constdata          m_ps.l(qnan.o)
+    0x00004a38   0x00004a38   0x00000003   Data   RO          433    .rodata..L__const.dmp_set_orientation.accel_axes  inv_mpu_dmp_motion_driver.o
+    0x00004a3b   0x00004a3b   0x00000003   Data   RO          432    .rodata..L__const.dmp_set_orientation.gyro_axes  inv_mpu_dmp_motion_driver.o
+    0x00004a3e   0x00004a3e   0x00000bf6   Data   RO          431    .rodata.dmp_memory  inv_mpu_dmp_motion_driver.o
+    0x00005634   0x00005634   0x00000003   Data   RO           52    .rodata.gPWM_MotorAClockConfig  ti_msp_dl_config.o
+    0x00005637   0x00005637   0x00000001   PAD
+    0x00005638   0x00005638   0x00000008   Data   RO           53    .rodata.gPWM_MotorAConfig  ti_msp_dl_config.o
+    0x00005640   0x00005640   0x00000003   Data   RO           50    .rodata.gPWM_MotorBClockConfig  ti_msp_dl_config.o
+    0x00005643   0x00005643   0x00000001   PAD
+    0x00005644   0x00005644   0x00000008   Data   RO           51    .rodata.gPWM_MotorBConfig  ti_msp_dl_config.o
+    0x0000564c   0x0000564c   0x00000003   Data   RO           54    .rodata.gTIMER_0ClockConfig  ti_msp_dl_config.o
+    0x0000564f   0x0000564f   0x00000001   PAD
+    0x00005650   0x00005650   0x00000014   Data   RO           55    .rodata.gTIMER_0TimerConfig  ti_msp_dl_config.o
+    0x00005664   0x00005664   0x00000002   Data   RO           58    .rodata.gUART_TransClockConfig  ti_msp_dl_config.o
+    0x00005666   0x00005666   0x0000000a   Data   RO           59    .rodata.gUART_TransConfig  ti_msp_dl_config.o
+    0x00005670   0x00005670   0x00000002   Data   RO           56    .rodata.gUSB_TLLClockConfig  ti_msp_dl_config.o
+    0x00005672   0x00005672   0x0000000a   Data   RO           57    .rodata.gUSB_TLLConfig  ti_msp_dl_config.o
+    0x0000567c   0x0000567c   0x0000000c   Data   RO          365    .rodata.hw          inv_mpu.o
+    0x00005688   0x00005688   0x0000001b   Data   RO          364    .rodata.reg         inv_mpu.o
+    0x000056a3   0x000056a3   0x00000037   Data   RO          259    .rodata.str1.1      mpu6050.o
+    0x000056da   0x000056da   0x0000004c   Data   RO          368    .rodata.str1.1      inv_mpu.o
+    0x00005726   0x00005726   0x00000002   PAD
+    0x00005728   0x00005728   0x00000028   Data   RO          366    .rodata.test        inv_mpu.o
+    0x00005750   0x00005750   0x00000020   Data   RO         1549    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM2 (Exec base: 0x20200000, Load base: 0x000057a8, Size: 0x000003c0, Max: 0x00008000, ABSOLUTE)
+    Execution Region RW_IRAM2 (Exec base: 0x20200000, Load base: 0x00005770, Size: 0x000003c0, Max: 0x00008000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20200000   0x000057a8   0x0000002c   Data   RW          367    .data.st            inv_mpu.o
-    0x2020002c   0x000057d4   0x00000004   PAD
+    0x20200000   0x00005770   0x0000002c   Data   RW          367    .data.st            inv_mpu.o
+    0x2020002c   0x0000579c   0x00000004   PAD
     0x20200030        -       0x00000060   Zero   RW         1394    .bss                c_p.l(libspace.o)
     0x20200090        -       0x000000c8   Zero   RW          216    .bss.BLERX_BUFF     bluebooth.o
     0x20200158        -       0x00000001   Zero   RW          213    .bss.BLERX_FLAG     bluebooth.o
     0x20200159        -       0x00000001   Zero   RW          214    .bss.BLERX_LEN      bluebooth.o
-    0x2020015a   0x000057d4   0x00000002   PAD
+    0x2020015a   0x0000579c   0x00000002   PAD
     0x2020015c        -       0x00000004   Zero   RW          141    .bss.Left_Count     encoder.o
     0x20200160        -       0x00000004   Zero   RW          142    .bss.Right_Count    encoder.o
     0x20200164        -       0x00000054   Zero   RW           93    .bss.__stdout       board.o
     0x202001b8        -       0x00000004   Zero   RW          436    .bss.dmp.0          inv_mpu_dmp_motion_driver.o
     0x202001bc        -       0x00000004   Zero   RW          437    .bss.dmp.1          inv_mpu_dmp_motion_driver.o
     0x202001c0        -       0x00000002   Zero   RW          438    .bss.dmp.2          inv_mpu_dmp_motion_driver.o
-    0x202001c2   0x000057d4   0x00000002   PAD
+    0x202001c2   0x0000579c   0x00000002   PAD
     0x202001c4        -       0x00000002   Zero   RW          439    .bss.dmp.3          inv_mpu_dmp_motion_driver.o
-    0x202001c6   0x000057d4   0x00000002   PAD
+    0x202001c6   0x0000579c   0x00000002   PAD
     0x202001c8        -       0x00000002   Zero   RW          440    .bss.dmp.4          inv_mpu_dmp_motion_driver.o
     0x202001ca        -       0x00000001   Zero   RW          441    .bss.dmp.5          inv_mpu_dmp_motion_driver.o
-    0x202001cb   0x000057d4   0x00000001   PAD
+    0x202001cb   0x0000579c   0x00000001   PAD
     0x202001cc        -       0x00000078   Zero   RW           48    .bss.gPWM_MotorABackup  ti_msp_dl_config.o
     0x20200244        -       0x00000078   Zero   RW           49    .bss.gTIMER_0Backup  ti_msp_dl_config.o
-    0x202002bc   0x000057d4   0x00000004   PAD
+    0x202002bc   0x0000579c   0x00000004   PAD
     0x202002c0        -       0x00000000   Zero   RW           15    HEAP                startup_mspm0g350x_uvision.o
     0x202002c0        -       0x00000100   Zero   RW           14    STACK               startup_mspm0g350x_uvision.o
 
@@ -4032,7 +4031,7 @@ Image component sizes
         10          0          0          0          0        569   dl_common.o
        528        192          0          0          0      31175   dl_timer.o
         90          8          0          0          0      13100   dl_uart.o
-       336        128          0          0          0       8226   empty.o
+       280         96          0          0          0       8079   empty.o
        100         16          0          0          8       4204   encoder.o
       3552        128        155         44          0      33117   inv_mpu.o
       1756        144       3068          0         15      11453   inv_mpu_dmp_motion_driver.o
@@ -4041,7 +4040,7 @@ Image component sizes
       1016        208         69          0        240      30047   ti_msp_dl_config.o
 
     ----------------------------------------------------------------------
-      9840       1006       3576         44        820     172438   Object Totals
+      9784        974       3576         44        820     172291   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         10          0          5          0         15          0   (incl. Padding)
 
@@ -4138,15 +4137,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     18368       1394       4072         44        916     174366   Grand Totals
-     18368       1394       4072         44        916     174366   ELF Image Totals
-     18368       1394       4072         44          0          0   ROM Totals
+     18312       1362       4072         44        916     174219   Grand Totals
+     18312       1362       4072         44        916     174219   ELF Image Totals
+     18312       1362       4072         44          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                22440 (  21.91kB)
+    Total RO  Size (Code + RO Data)                22384 (  21.86kB)
     Total RW  Size (RW Data + ZI Data)               960 (   0.94kB)
-    Total ROM Size (Code + RO Data + RW Data)      22484 (  21.96kB)
+    Total ROM Size (Code + RO Data + RW Data)      22428 (  21.90kB)
 
 ==============================================================================
 

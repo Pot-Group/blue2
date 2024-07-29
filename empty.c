@@ -75,11 +75,11 @@ int main(void)
 		
             if( mpu_dmp_get_data(&pitch,&roll,&yaw) == 0 )
             {
-				DL_GPIO_setPins(LED1_PORT,LED1_PIN_27_PIN);  //输出高电平
-				delay_ms(50);//延时大概1S
-				printf("\r\npitch =%d\r\n", (int)pitch);
-                  printf("\r\nroll =%d\r\n", (int)roll);
-                  printf("\r\nyaw =%d\r\n", (int)yaw);
+//				DL_GPIO_setPins(LED1_PORT,LED1_PIN_27_PIN);  //输出高电平
+//				delay_ms(50);//延时大概1S
+				printf("%d, %d, %d \r\n", (int)pitch,(int)roll,(int)yaw);
+//                printf("\r\nroll =%d\r\n", (int)roll);
+//                printf("\r\nyaw =%d\r\n", (int)yaw);
             }
 //				printf("Error!!\r\n");
             delay_ms(20);//根据设置的采样率，不可设置延时过大
