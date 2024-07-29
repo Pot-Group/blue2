@@ -4031,24 +4031,24 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       220         84          0          0        202       9311   bluebooth.o
-       182         48          0          0         84       8080   board.o
-       104         32          0          0          4       1256   contorl.o
+       220         84          0          0        202       9305   bluebooth.o
+       182         48          0          0         84       8059   board.o
+       104         32          0          0          4       1250   contorl.o
         10          0          0          0          0        569   dl_common.o
        528        192          0          0          0      31175   dl_timer.o
         90          8          0          0          0      13100   dl_uart.o
-       192         84          0          0          0       5831   empty.o
-       208         80          0          0         12       4828   encoder.o
-      2934        116        155         44          0      33117   inv_mpu.o
-      1328        132       3068          0          7      11453   inv_mpu_dmp_motion_driver.o
-       108          8          0          2          0       2605   motor.o
-      2088         64         55          0          0      22492   mpu6050.o
-        68          4          0          0          0       3738   pwm.o
+       192         84          0          0          0       5810   empty.o
+       208         80          0          0         12       4822   encoder.o
+      2934        116        155         44          0      33111   inv_mpu.o
+      1328        132       3068          0          7      11447   inv_mpu_dmp_motion_driver.o
+       108          8          0          2          0       2599   motor.o
+      2088         64         55          0          0      22486   mpu6050.o
+        68          4          0          0          0       3732   pwm.o
         44         18        192          0        256        664   startup_mspm0g350x_uvision.o
        972        200         69          0        240      29538   ti_msp_dl_config.o
 
     ----------------------------------------------------------------------
-      9084       1070       3575         48        816     177757   Object Totals
+      9084       1070       3575         48        816     177667   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          8          0          4          2         11          0   (incl. Padding)
 
@@ -4123,8 +4123,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     12184       1160       3696         48        912     178661   Grand Totals
-     12184       1160       3696         48        912     178661   ELF Image Totals
+     12184       1160       3696         48        912     178571   Grand Totals
+     12184       1160       3696         48        912     178571   ELF Image Totals
      12184       1160       3696         48          0          0   ROM Totals
 
 ==============================================================================
