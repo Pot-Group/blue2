@@ -80,13 +80,16 @@ int main(void)
 //            }
 //            delay_ms(20);//根据设置的采样率，不可设置延时过大
 			Interrupt_Solution();
+
 //		Motor_Stop(0);
 //		Encoder_Get();
 //       LineWalking();
 //		Motor_Stop(0);
 //		Motor_TurnRight(1000);
-
+//			Velocity_Con(0);
 //Motor_straight(0);
+
+
 	}
 }
 

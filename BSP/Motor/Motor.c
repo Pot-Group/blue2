@@ -50,7 +50,7 @@ float Duty_Limit(int16_t Duty)
 			Duty =  4000;	
 		else
 				Duty = Vlocity_init - Duty;
-			
+			//Duty = (Duty * 4000) / 1023;
 
 //		if(Duty >= 4000)
 //			 Duty =  4000;	

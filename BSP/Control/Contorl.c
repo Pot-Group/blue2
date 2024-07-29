@@ -1,12 +1,13 @@
 #include "Control.h"
-
+#include "stdio.h"
 
 float Velocity_D = 0,Velocity_I = 0;					//速度环KP、KI
 
 int Velocity_out,PWM_out;								//速度环的输出
 int Moto1,Moto2;												//两个电机的输出量
-int Encoder_Left,Encoder_Right;
-
+int Encoder_Left,Encoder_Right,
+			Motor_pwm;
+extern PID pid; 
 
 void Interrupt_Solution(void){
 	if(Flag_2ms == 1){
@@ -19,8 +20,12 @@ void Interrupt_Solution(void){
 		
 		Flag_20ms = 0;
 	}
+	
 	Encoder_Get();
-	Motor_straight(500);
+	Motor_pwm = Velocity_Con(4000);
+	
+	printf("Motor_pwm %d\n", Motor_pwm);
+	Motor_straight(Motor_pwm);
 	
 }
 //void EXTI9_5_IRQHandler(void)								//中断服务程序
@@ -89,23 +94,26 @@ void Interrupt_Solution(void){
 
 int Velocity_Con(int Aim_velocity)
 {
-	static int Now_velocity,
-				 proportion;
+	static int Now_velocity , Now_error,Last_error , Pwm_out,
+			   Velocity_P = 1, Velocity_I,Velocity_D;
 	
-	float a = 0.7;																		//这个系数是作用在低通滤波器上的，要突出其中一部分的信号，一般大于0.5即可
+	static float proportion = 10.1,
+				 a = 0.7;	
+						
+	//这个系数是作用在低通滤波器上的，要突出其中一部分的信号，一般大于0.5即可
 	//1.计算速度误差
-	Now_velocity = (Encoder_Left + Encoder_Right) / 2 * proportion;							//这里的0是预期值，即速度为零静止，不求均值是为了防止舍入误差			
-
-	//LPF公式：滤波结果=a*上一次采样值+(1-a)本次滤波的结果
-//	Enc_ERR_Lowout = (1 - a) * Enc_ERR + a * Enc_ERR_Lowout_Last;
-//	Enc_ERR_Lowout_Last = Enc_ERR_Lowout;
-//	//3.对速度进行积分，得出位移
-//	Enc_ERR_S += Enc_ERR_Lowout;													//误差积分
-//	//4.对积分进行限幅
-//	Enc_ERR_S = Enc_ERR_S > 10000 ? 10000 : (Enc_ERR_S < (-10000) ? (-10000) : Enc_ERR_S);
-//	//5.速度环控制输出计算
-//	PWM_out = Velocity_D * Enc_ERR_Lowout + Velocity_I * Enc_ERR_S;
+	Encoder_Get();
+			
+	Now_velocity = (Encoder_left_out + Encoder_right_out) / 2 * proportion;							//这里的0是预期值，即速度为零静止，不求均值是为了防止舍入误差			
 	
-	return PWM_out;
+	Now_error = Aim_velocity - Now_velocity ;
+	
+	Pwm_out = Velocity_P *Now_error + Velocity_D * (Now_error - Last_error);
+	
+	Last_error = Now_error;
+	
+	printf("Pwm_out: %d\n",Pwm_out); 
+	
+	return Pwm_out;
 }
 
