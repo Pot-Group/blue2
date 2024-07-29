@@ -41,6 +41,7 @@
 #include "ti_msp_dl_config.h"
 
 DL_TimerG_backupConfig gPWM_MotorABackup;
+DL_TimerG_backupConfig gTIMER_0Backup;
 
 /*
  *  ======== SYSCFG_DL_init ========
@@ -60,7 +61,7 @@ SYSCONFIG_WEAK void SYSCFG_DL_init(void)
     SYSCFG_DL_SYSTICK_init();
     /* Ensure backup structures have no valid state */
 	gPWM_MotorABackup.backupRdy 	= false;
-
+	gTIMER_0Backup.backupRdy 	= false;
 
 
 }
@@ -73,6 +74,7 @@ SYSCONFIG_WEAK bool SYSCFG_DL_saveConfiguration(void)
     bool retStatus = true;
 
 	retStatus &= DL_TimerG_saveConfiguration(PWM_MotorA_INST, &gPWM_MotorABackup);
+	retStatus &= DL_TimerG_saveConfiguration(TIMER_0_INST, &gTIMER_0Backup);
 
     return retStatus;
 }
@@ -83,6 +85,7 @@ SYSCONFIG_WEAK bool SYSCFG_DL_restoreConfiguration(void)
     bool retStatus = true;
 
 	retStatus &= DL_TimerG_restoreConfiguration(PWM_MotorA_INST, &gPWM_MotorABackup, false);
+	retStatus &= DL_TimerG_restoreConfiguration(TIMER_0_INST, &gTIMER_0Backup, false);
 
     return retStatus;
 }
@@ -140,17 +143,25 @@ SYSCONFIG_WEAK void SYSCFG_DL_GPIO_init(void)
 
     DL_GPIO_initDigitalInput(HC05_STATE_IOMUX);
 
-    DL_GPIO_initDigitalOutput(OLED_SCL_IOMUX);
+    DL_GPIO_initDigitalOutput(GPIO_SCL_IOMUX);
 
-    DL_GPIO_initDigitalOutput(OLED_SDA_IOMUX);
+    DL_GPIO_initDigitalOutput(GPIO_SDA_IOMUX);
 
-    DL_GPIO_initDigitalInput(GPIO_Encoder_PIN_Right_A_IOMUX);
+    DL_GPIO_initDigitalInputFeatures(GPIO_Encoder_PIN_Right_A_IOMUX,
+		 DL_GPIO_INVERSION_DISABLE, DL_GPIO_RESISTOR_PULL_DOWN,
+		 DL_GPIO_HYSTERESIS_DISABLE, DL_GPIO_WAKEUP_DISABLE);
 
-    DL_GPIO_initDigitalInput(GPIO_Encoder_PIN_Right_B_IOMUX);
+    DL_GPIO_initDigitalInputFeatures(GPIO_Encoder_PIN_Right_B_IOMUX,
+		 DL_GPIO_INVERSION_DISABLE, DL_GPIO_RESISTOR_PULL_DOWN,
+		 DL_GPIO_HYSTERESIS_DISABLE, DL_GPIO_WAKEUP_DISABLE);
 
-    DL_GPIO_initDigitalInput(GPIO_Encoder_PIN_Left_A_IOMUX);
+    DL_GPIO_initDigitalInputFeatures(GPIO_Encoder_PIN_Left_A_IOMUX,
+		 DL_GPIO_INVERSION_DISABLE, DL_GPIO_RESISTOR_PULL_DOWN,
+		 DL_GPIO_HYSTERESIS_DISABLE, DL_GPIO_WAKEUP_DISABLE);
 
-    DL_GPIO_initDigitalInput(GPIO_Encoder_PIN_Left_B_IOMUX);
+    DL_GPIO_initDigitalInputFeatures(GPIO_Encoder_PIN_Left_B_IOMUX,
+		 DL_GPIO_INVERSION_DISABLE, DL_GPIO_RESISTOR_PULL_DOWN,
+		 DL_GPIO_HYSTERESIS_DISABLE, DL_GPIO_WAKEUP_DISABLE);
 
     DL_GPIO_initDigitalInput(GPIO_LineGet_PIN_Line_Left1_IOMUX);
 
@@ -161,11 +172,11 @@ SYSCONFIG_WEAK void SYSCFG_DL_GPIO_init(void)
     DL_GPIO_initDigitalInput(GPIO_LineGet_PIN_Line_Right2_IOMUX);
 
     DL_GPIO_clearPins(GPIOA, LED1_PIN_27_PIN);
-    DL_GPIO_setPins(GPIOA, OLED_SCL_PIN |
-		OLED_SDA_PIN);
+    DL_GPIO_setPins(GPIOA, GPIO_SCL_PIN |
+		GPIO_SDA_PIN);
     DL_GPIO_enableOutput(GPIOA, LED1_PIN_27_PIN |
-		OLED_SCL_PIN |
-		OLED_SDA_PIN);
+		GPIO_SCL_PIN |
+		GPIO_SDA_PIN);
     DL_GPIO_setUpperPinsPolarity(GPIOA, DL_GPIO_PIN_18_EDGE_RISE);
     DL_GPIO_clearInterruptStatus(GPIOA, KEY_PIN_18_PIN);
     DL_GPIO_enableInterrupt(GPIOA, KEY_PIN_18_PIN);
@@ -306,7 +317,7 @@ static const DL_TimerG_ClockConfig gTIMER_0ClockConfig = {
 
 /*
  * Timer load value (where the counter starts from) is calculated as (timerPeriod * timerClockFreq) - 1
- * TIMER_0_INST_LOAD_VALUE = (100ms * 15625 Hz) - 1
+ * TIMER_0_INST_LOAD_VALUE = (50ms * 15625 Hz) - 1
  */
 static const DL_TimerG_TimerConfig gTIMER_0TimerConfig = {
     .period     = TIMER_0_INST_LOAD_VALUE,
@@ -322,6 +333,7 @@ SYSCONFIG_WEAK void SYSCFG_DL_TIMER_0_init(void) {
     DL_TimerG_initTimerMode(TIMER_0_INST,
         (DL_TimerG_TimerConfig *) &gTIMER_0TimerConfig);
     DL_TimerG_enableInterrupt(TIMER_0_INST , DL_TIMERG_INTERRUPT_ZERO_EVENT);
+	NVIC_SetPriority(TIMER_0_INST_INT_IRQN, 3);
     DL_TimerG_enableClock(TIMER_0_INST);
 
 

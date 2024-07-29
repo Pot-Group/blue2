@@ -138,7 +138,7 @@ void Openmv4DataAnalysis(void)
 //                    break;
 //      }
 //}
-void HardFault_Handler()
-{
-      printf("entry Error!!!!\r\n");
-}
+//void HardFault_Handler()
+//{
+//      printf("entry Error!!!!\r\n");
+//}

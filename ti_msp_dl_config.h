@@ -116,10 +116,10 @@ extern "C" {
 
 
 /* Defines for TIMER_0 */
-#define TIMER_0_INST                                                     (TIMG0)
-#define TIMER_0_INST_IRQHandler                                 TIMG0_IRQHandler
-#define TIMER_0_INST_INT_IRQN                                   (TIMG0_INT_IRQn)
-#define TIMER_0_INST_LOAD_VALUE                                          (1562U)
+#define TIMER_0_INST                                                     (TIMG7)
+#define TIMER_0_INST_IRQHandler                                 TIMG7_IRQHandler
+#define TIMER_0_INST_INT_IRQN                                   (TIMG7_INT_IRQn)
+#define TIMER_0_INST_LOAD_VALUE                                           (780U)
 
 
 
@@ -180,15 +180,15 @@ extern "C" {
 /* Defines for STATE: GPIOA.7 with pinCMx 14 on package pin 49 */
 #define HC05_STATE_PIN                                           (DL_GPIO_PIN_7)
 #define HC05_STATE_IOMUX                                         (IOMUX_PINCM14)
-/* Port definition for Pin Group OLED */
-#define OLED_PORT                                                        (GPIOA)
+/* Port definition for Pin Group GPIO */
+#define GPIO_PORT                                                        (GPIOA)
 
 /* Defines for SCL: GPIOA.0 with pinCMx 1 on package pin 33 */
-#define OLED_SCL_PIN                                             (DL_GPIO_PIN_0)
-#define OLED_SCL_IOMUX                                            (IOMUX_PINCM1)
+#define GPIO_SCL_PIN                                             (DL_GPIO_PIN_0)
+#define GPIO_SCL_IOMUX                                            (IOMUX_PINCM1)
 /* Defines for SDA: GPIOA.1 with pinCMx 2 on package pin 34 */
-#define OLED_SDA_PIN                                             (DL_GPIO_PIN_1)
-#define OLED_SDA_IOMUX                                            (IOMUX_PINCM2)
+#define GPIO_SDA_PIN                                             (DL_GPIO_PIN_1)
+#define GPIO_SDA_IOMUX                                            (IOMUX_PINCM2)
 /* Port definition for Pin Group GPIO_Encoder */
 #define GPIO_Encoder_PORT                                                (GPIOB)
 

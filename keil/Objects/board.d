@@ -79,9 +79,8 @@
   ..\..\source\ti\driverlib\m0p\dl_interrupt.h \
   ..\..\source\ti\driverlib\m0p\dl_systick.h ..\BSP\PWM\PWM.h \
   ..\..\All_contoll\board.h ..\BSP\Motor\Motor.h \
-  ..\BSP\Encoder\Encoder.h ..\BSP\OLED\oled.h \
-  D:\Keil_v5_mdk\ARM\ARMCLANG\Bin\..\include\stdlib.h \
-  ..\BSP\Line_Follow\Line_Follow.h ..\BSP\UART\UART.h \
-  ..\BSP\Blue_Connect\bluebooth.h \
+  ..\BSP\Encoder\Encoder.h ..\BSP\Line_Follow\Line_Follow.h \
+  ..\BSP\UART\UART.h ..\BSP\Blue_Connect\bluebooth.h \
   D:\Keil_v5_mdk\ARM\ARMCLANG\Bin\..\include\string.h \
+  ..\BSP\mpu6050\mpu6050.h ..\BSP\mpu6050\eMPL\inv_mpu.h \
   D:\Keil_v5_mdk\ARM\ARMCLANG\Bin\..\include\stdio.h

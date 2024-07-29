@@ -1,9 +1,14 @@
-./objects/oled.o: ..\BSP\OLED\oled.c ..\BSP\OLED\oled.h \
-  ..\..\All_contoll\board.h ..\..\All_contoll\ti_msp_dl_config.h \
-  ..\..\source\ti\devices\msp\msp.h \
+./objects/inv_mpu_dmp_motion_driver.o: \
+  ..\BSP\mpu6050\eMPL\inv_mpu_dmp_motion_driver.c \
+  D:\Keil_v5_mdk\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  D:\Keil_v5_mdk\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  D:\Keil_v5_mdk\ARM\ARMCLANG\Bin\..\include\stdlib.h \
+  D:\Keil_v5_mdk\ARM\ARMCLANG\Bin\..\include\string.h \
+  D:\Keil_v5_mdk\ARM\ARMCLANG\Bin\..\include\math.h \
+  ..\BSP\mpu6050\eMPL\inv_mpu.h ..\..\All_contoll\board.h \
+  ..\..\All_contoll\ti_msp_dl_config.h ..\..\source\ti\devices\msp\msp.h \
   ..\..\source\ti\devices\DeviceFamily.h \
   ..\..\source\ti\devices\msp\m0p\mspm0g350x.h \
-  D:\Keil_v5_mdk\ARM\ARMCLANG\Bin\..\include\stdint.h \
   D:\Keil_v5_mdk\ARM\ARMCLANG\Bin\..\include\stdbool.h \
   ..\..\source\third_party\CMSIS\Core\Include\core_cm0plus.h \
   ..\..\source\third_party\CMSIS\Core\Include\cmsis_version.h \
@@ -40,7 +45,6 @@
   ..\..\source\ti\devices\msp\peripherals\m0p\sysctl\hw_sysctl_mspm0g1x0x_g3x0x.h \
   ..\..\source\ti\driverlib\driverlib.h \
   ..\..\source\ti\driverlib\dl_adc12.h \
-  D:\Keil_v5_mdk\ARM\ARMCLANG\Bin\..\include\math.h \
   ..\..\source\ti\driverlib\dl_common.h \
   ..\..\source\ti\driverlib\m0p\dl_factoryregion.h \
   ..\..\source\ti\driverlib\m0p\dl_core.h \
@@ -79,8 +83,9 @@
   ..\..\source\ti\driverlib\dl_wwdt.h \
   ..\..\source\ti\driverlib\m0p\dl_interrupt.h \
   ..\..\source\ti\driverlib\m0p\dl_systick.h ..\BSP\PWM\PWM.h \
-  ..\BSP\Motor\Motor.h ..\BSP\Encoder\Encoder.h ..\BSP\OLED\oled.h \
+  ..\BSP\Motor\Motor.h ..\BSP\Encoder\Encoder.h \
   ..\BSP\Line_Follow\Line_Follow.h ..\BSP\UART\UART.h \
-  ..\BSP\Blue_Connect\bluebooth.h \
-  D:\Keil_v5_mdk\ARM\ARMCLANG\Bin\..\include\string.h \
-  D:\Keil_v5_mdk\ARM\ARMCLANG\Bin\..\include\stdio.h
+  ..\BSP\Blue_Connect\bluebooth.h ..\BSP\mpu6050\mpu6050.h \
+  ..\BSP\mpu6050\eMPL\inv_mpu.h \
+  ..\BSP\mpu6050\eMPL\inv_mpu_dmp_motion_driver.h \
+  ..\BSP\mpu6050\eMPL\dmpKey.h ..\BSP\mpu6050\eMPL\dmpmap.h

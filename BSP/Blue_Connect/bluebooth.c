@@ -194,7 +194,5 @@ void UART_Trans_INST_IRQHandler(void)
 
 			default://其他的串口中断
 			break;
-
-      
 	}
 }

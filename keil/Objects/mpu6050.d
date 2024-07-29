@@ -1,4 +1,4 @@
-./objects/oled.o: ..\BSP\OLED\oled.c ..\BSP\OLED\oled.h \
+./objects/mpu6050.o: ..\BSP\mpu6050\mpu6050.c ..\BSP\mpu6050\mpu6050.h \
   ..\..\All_contoll\board.h ..\..\All_contoll\ti_msp_dl_config.h \
   ..\..\source\ti\devices\msp\msp.h \
   ..\..\source\ti\devices\DeviceFamily.h \
@@ -79,8 +79,9 @@
   ..\..\source\ti\driverlib\dl_wwdt.h \
   ..\..\source\ti\driverlib\m0p\dl_interrupt.h \
   ..\..\source\ti\driverlib\m0p\dl_systick.h ..\BSP\PWM\PWM.h \
-  ..\BSP\Motor\Motor.h ..\BSP\Encoder\Encoder.h ..\BSP\OLED\oled.h \
+  ..\BSP\Motor\Motor.h ..\BSP\Encoder\Encoder.h \
   ..\BSP\Line_Follow\Line_Follow.h ..\BSP\UART\UART.h \
   ..\BSP\Blue_Connect\bluebooth.h \
   D:\Keil_v5_mdk\ARM\ARMCLANG\Bin\..\include\string.h \
+  ..\BSP\mpu6050\mpu6050.h ..\BSP\mpu6050\eMPL\inv_mpu.h \
   D:\Keil_v5_mdk\ARM\ARMCLANG\Bin\..\include\stdio.h

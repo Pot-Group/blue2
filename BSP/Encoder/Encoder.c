@@ -25,23 +25,9 @@ int Read_Speed(int Encoder_Num)										//读取编码器速度
 	return value_1;
 }
 
-//TIM0的中断服务函数
-void TIMER_0_INST_IRQHandler(void)
-{
-    //如果产生了定时器中断
-    switch( DL_TimerG_getPendingInterrupt(TIMER_0_INST) )
-    {
-        case DL_TIMER_IIDX_ZERO://如果是0溢出中断
-//            uart0_send_char(Right_Count);			
-//            uart0_send_char(Left_Count);
-			Left_Count = 0;
-			Right_Count = 0;
-            break;
 
-			default://其他的定时器中断
-            break;
-    }
-}
+
+
 
 //外部中断服务函数
 void GROUP1_IRQHandler(void)
