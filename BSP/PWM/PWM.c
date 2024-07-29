@@ -24,7 +24,7 @@ void PwmB_Duty_Set(float Duty,uint8_t channel)				//PWMÆµÂÊÎª1kHz
 //timerClkFreq = (timerClkSrc / (timerClkDivRatio * (timerClkPrescale + 1)))
 {
 
-	uint32_t CompareValue = 4000 - (1 - Duty) * 4000;
+	uint32_t CompareValue = 4000 - Duty;
 	
 	switch(channel){
 		case 0:

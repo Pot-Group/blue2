@@ -78,21 +78,21 @@ extern "C" {
 
 
 /* Defines for PWM_MotorB */
-#define PWM_MotorB_INST                                                   TIMG12
-#define PWM_MotorB_INST_IRQHandler                             TIMG12_IRQHandler
-#define PWM_MotorB_INST_INT_IRQN                               (TIMG12_INT_IRQn)
+#define PWM_MotorB_INST                                                    TIMG8
+#define PWM_MotorB_INST_IRQHandler                              TIMG8_IRQHandler
+#define PWM_MotorB_INST_INT_IRQN                                (TIMG8_INT_IRQn)
 #define PWM_MotorB_INST_CLK_FREQ                                         4000000
 /* GPIO defines for channel 0 */
 #define GPIO_PWM_MotorB_C0_PORT                                            GPIOA
-#define GPIO_PWM_MotorB_C0_PIN                                    DL_GPIO_PIN_14
-#define GPIO_PWM_MotorB_C0_IOMUX                                 (IOMUX_PINCM36)
-#define GPIO_PWM_MotorB_C0_IOMUX_FUNC               IOMUX_PINCM36_PF_TIMG12_CCP0
+#define GPIO_PWM_MotorB_C0_PIN                                    DL_GPIO_PIN_26
+#define GPIO_PWM_MotorB_C0_IOMUX                                 (IOMUX_PINCM59)
+#define GPIO_PWM_MotorB_C0_IOMUX_FUNC                IOMUX_PINCM59_PF_TIMG8_CCP0
 #define GPIO_PWM_MotorB_C0_IDX                               DL_TIMER_CC_0_INDEX
 /* GPIO defines for channel 1 */
 #define GPIO_PWM_MotorB_C1_PORT                                            GPIOA
-#define GPIO_PWM_MotorB_C1_PIN                                    DL_GPIO_PIN_25
-#define GPIO_PWM_MotorB_C1_IOMUX                                 (IOMUX_PINCM55)
-#define GPIO_PWM_MotorB_C1_IOMUX_FUNC               IOMUX_PINCM55_PF_TIMG12_CCP1
+#define GPIO_PWM_MotorB_C1_PIN                                    DL_GPIO_PIN_27
+#define GPIO_PWM_MotorB_C1_IOMUX                                 (IOMUX_PINCM60)
+#define GPIO_PWM_MotorB_C1_IOMUX_FUNC                IOMUX_PINCM60_PF_TIMG8_CCP1
 #define GPIO_PWM_MotorB_C1_IDX                               DL_TIMER_CC_1_INDEX
 
 /* Defines for PWM_MotorA */
@@ -158,12 +158,6 @@ extern "C" {
 
 
 
-/* Port definition for Pin Group LED1 */
-#define LED1_PORT                                                        (GPIOA)
-
-/* Defines for PIN_27: GPIOA.27 with pinCMx 60 on package pin 31 */
-#define LED1_PIN_27_PIN                                         (DL_GPIO_PIN_27)
-#define LED1_PIN_27_IOMUX                                        (IOMUX_PINCM60)
 /* Port definition for Pin Group KEY */
 #define KEY_PORT                                                         (GPIOA)
 
