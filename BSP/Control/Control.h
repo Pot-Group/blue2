@@ -3,6 +3,6 @@
 
 #include "board.h"
 
-
+extern void Interrupt_Solution();
 
 #endif

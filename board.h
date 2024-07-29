@@ -21,6 +21,8 @@
 #include "bluebooth.h"
 #include "mpu6050.h"
 #include "inv_mpu.h"
+#include "Control.h"
+
 
 #define LOW		(0)
 #define HIGH	(1)

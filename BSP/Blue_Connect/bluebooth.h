@@ -27,5 +27,6 @@ void Bluetooth_Mode(void);
 void Receive_Bluetooth_Data(void);
 void BLE_send_String(unsigned char *str);
 extern void BLE_Send_Bit(unsigned char ch);
+void Send_Bluetooth_Data(char *dat);
 
 #endif

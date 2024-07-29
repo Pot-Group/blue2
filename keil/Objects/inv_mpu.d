@@ -85,5 +85,5 @@
   ..\BSP\Motor\Motor.h ..\BSP\Encoder\Encoder.h \
   ..\BSP\Line_Follow\Line_Follow.h ..\BSP\UART\UART.h \
   ..\BSP\Blue_Connect\bluebooth.h ..\BSP\mpu6050\mpu6050.h \
-  ..\BSP\mpu6050\eMPL\inv_mpu.h \
+  ..\BSP\mpu6050\eMPL\inv_mpu.h ..\BSP\Control\Control.h \
   ..\BSP\mpu6050\eMPL\inv_mpu_dmp_motion_driver.h

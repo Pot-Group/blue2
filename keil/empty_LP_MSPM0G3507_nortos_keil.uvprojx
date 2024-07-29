@@ -138,7 +138,7 @@
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3></Flash3>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -419,31 +419,6 @@
           <GroupName>BSP</GroupName>
           <Files>
             <File>
-              <FileName>PWM.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\BSP\PWM\PWM.c</FilePath>
-            </File>
-            <File>
-              <FileName>Motor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\BSP\Motor\Motor.c</FilePath>
-            </File>
-            <File>
-              <FileName>Motor.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\BSP\Motor\Motor.h</FilePath>
-            </File>
-            <File>
-              <FileName>Encoder.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\BSP\Encoder\Encoder.c</FilePath>
-            </File>
-            <File>
-              <FileName>Encoder.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\BSP\Encoder\Encoder.h</FilePath>
-            </File>
-            <File>
               <FileName>UART.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\BSP\UART\UART.c</FilePath>
@@ -452,26 +427,6 @@
               <FileName>UART.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\BSP\UART\UART.h</FilePath>
-            </File>
-            <File>
-              <FileName>Contorl.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\BSP\Control\Contorl.c</FilePath>
-            </File>
-            <File>
-              <FileName>Control.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\BSP\Control\Control.h</FilePath>
-            </File>
-            <File>
-              <FileName>Line_Follow.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\BSP\Line_Follow\Line_Follow.c</FilePath>
-            </File>
-            <File>
-              <FileName>Line_Follow.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\BSP\Line_Follow\Line_Follow.h</FilePath>
             </File>
             <File>
               <FileName>bluebooth.c</FileName>
@@ -502,6 +457,56 @@
               <FileName>inv_mpu_dmp_motion_driver.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\BSP\mpu6050\eMPL\inv_mpu_dmp_motion_driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>Line_Follow.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\Line_Follow\Line_Follow.c</FilePath>
+            </File>
+            <File>
+              <FileName>Line_Follow.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\BSP\Line_Follow\Line_Follow.h</FilePath>
+            </File>
+            <File>
+              <FileName>Motor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\Motor\Motor.c</FilePath>
+            </File>
+            <File>
+              <FileName>Motor.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\BSP\Motor\Motor.h</FilePath>
+            </File>
+            <File>
+              <FileName>PWM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\BSP\PWM\PWM.h</FilePath>
+            </File>
+            <File>
+              <FileName>PWM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\PWM\PWM.c</FilePath>
+            </File>
+            <File>
+              <FileName>Encoder.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\Encoder\Encoder.c</FilePath>
+            </File>
+            <File>
+              <FileName>Encoder.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\BSP\Encoder\Encoder.h</FilePath>
+            </File>
+            <File>
+              <FileName>Contorl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\Control\Contorl.c</FilePath>
+            </File>
+            <File>
+              <FileName>Control.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\BSP\Control\Control.h</FilePath>
             </File>
           </Files>
         </Group>

@@ -9,7 +9,7 @@
 void PwmA_Duty_Set(float Duty,uint8_t channel)				//PWM频率为1kHz
 //timerClkFreq = (timerClkSrc / (timerClkDivRatio * (timerClkPrescale + 1)))
 {
-	uint32_t CompareValue = 4000 - (1 - Duty) * 4000;
+	uint32_t CompareValue = 4000 - Duty;
 	switch(channel){
 		case 0:
 			DL_TimerG_setCaptureCompareValue(PWM_MotorA_INST,CompareValue,GPIO_PWM_MotorA_C0_IDX);			
@@ -23,7 +23,9 @@ void PwmA_Duty_Set(float Duty,uint8_t channel)				//PWM频率为1kHz
 void PwmB_Duty_Set(float Duty,uint8_t channel)				//PWM频率为1kHz
 //timerClkFreq = (timerClkSrc / (timerClkDivRatio * (timerClkPrescale + 1)))
 {
+
 	uint32_t CompareValue = 4000 - (1 - Duty) * 4000;
+	
 	switch(channel){
 		case 0:
 			DL_TimerG_setCaptureCompareValue(PWM_MotorB_INST,CompareValue,GPIO_PWM_MotorB_C0_IDX);			

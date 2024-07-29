@@ -1,11 +1,27 @@
 #include "Control.h"
 
+
 float Velocity_D = 0,Velocity_I = 0;					//速度环KP、KI
 
 int Velocity_out,PWM_out;								//速度环的输出
 int Moto1,Moto2;												//两个电机的输出量
 int Encoder_Left,Encoder_Right;
 
+
+void Interrupt_Solution(void){
+	if(Flag_2ms == 1){
+			
+		Flag_2ms = 0;
+				
+	}
+	if(Flag_20ms == 1){
+		
+		Encoder_Get();
+		Flag_20ms = 0;
+	}
+	Motor_straight(500);
+	
+}
 //void EXTI9_5_IRQHandler(void)								//中断服务程序
 //{
 //	if(EXTI_GetITStatus(EXTI_Line5) != 0)				//若IT标志位不为0即表示触发中断
