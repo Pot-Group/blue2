@@ -46,11 +46,11 @@ int GPF_abs(int x)
 float Duty_Limit(int16_t Duty)
 {
 	
-		if(Duty >= 1023)
+		if(Duty >= 4000)
 			Duty =  4000;	
 		else
-				Duty = Vlocity_init - Vlocity_init * Duty / 1023;
-			//Duty = (Duty * 4000) / 1023;
+				Duty = Vlocity_init - Duty;
+			
 
 //		if(Duty >= 4000)
 //			 Duty =  4000;	

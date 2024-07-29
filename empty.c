@@ -82,7 +82,11 @@ int main(void)
 			Interrupt_Solution();
 //		Motor_Stop(0);
 //		Encoder_Get();
-	
+//       LineWalking();
+//		Motor_Stop(0);
+//		Motor_TurnRight(1000);
+
+//Motor_straight(0);
 	}
 }
 
@@ -93,14 +97,18 @@ void TIMER_0_INST_IRQHandler(void)
 		unsigned int T_20ms;
 		unsigned int T_50ms;
 	
-    //Èç¹û²úÉúÁË¶¨Ê±Æ÷ÖÐ¶Ï
+   
     switch( DL_TimerG_getPendingInterrupt(TIMER_0_INST) ){
 			case DL_TIMER_IIDX_ZERO:
+				
+//			Left_Count ++;
+//			Right_Count ++;
+			
 					T_2ms +=1;
 					T_6ms +=1;
 					T_20ms +=1;	
 					T_50ms +=1;
-//			printf("T_2ms %d\n",T_50ms);
+			
 			break;            
 			default:								
             break;

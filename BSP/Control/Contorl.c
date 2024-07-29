@@ -16,9 +16,10 @@ void Interrupt_Solution(void){
 	}
 	if(Flag_20ms == 1){
 		
-		Encoder_Get();
+		
 		Flag_20ms = 0;
 	}
+	Encoder_Get();
 	Motor_straight(500);
 	
 }
@@ -65,22 +66,45 @@ void Interrupt_Solution(void){
 *入口参数：左右编码器的速度
 *返回参数：速度环pid输出
 *************/
-int Velocity_Con(int Encoder_Left,int Encoder_Right)
+//int Velocity_Con(int Encoder_Left,int Encoder_Right)
+//{
+//	static int PWM_out,Enc_ERR,Enc_ERR_Lowout,Enc_ERR_Lowout_Last,Enc_ERR_S;
+//	float a = 0.7;																		//这个系数是作用在低通滤波器上的，要突出其中一部分的信号，一般大于0.5即可
+//	//1.计算速度误差
+//	Enc_ERR = (Encoder_Left + Encoder_Right) - 0;							//这里的0是预期值，即速度为零静止，不求均值是为了防止舍入误差			
+//	//2.速度环的输入会让直立不稳定，添加一个低通滤波器防止高频干扰
+//	//LPF公式：滤波结果=a*上一次采样值+(1-a)本次滤波的结果
+//	Enc_ERR_Lowout = (1 - a) * Enc_ERR + a * Enc_ERR_Lowout_Last;
+//	Enc_ERR_Lowout_Last = Enc_ERR_Lowout;
+//	//3.对速度进行积分，得出位移
+//	Enc_ERR_S += Enc_ERR_Lowout;													//误差积分
+//	//4.对积分进行限幅
+//	Enc_ERR_S = Enc_ERR_S > 10000 ? 10000 : (Enc_ERR_S < (-10000) ? (-10000) : Enc_ERR_S);
+//	//5.速度环控制输出计算
+//	PWM_out = Velocity_D * Enc_ERR_Lowout + Velocity_I * Enc_ERR_S;
+//	
+//	return PWM_out;
+//}
+
+
+int Velocity_Con(int Aim_velocity)
 {
-	static int PWM_out,Enc_ERR,Enc_ERR_Lowout,Enc_ERR_Lowout_Last,Enc_ERR_S;
+	static int Now_velocity,
+				 proportion;
+	
 	float a = 0.7;																		//这个系数是作用在低通滤波器上的，要突出其中一部分的信号，一般大于0.5即可
 	//1.计算速度误差
-	Enc_ERR = (Encoder_Left + Encoder_Right) - 0;							//这里的0是预期值，即速度为零静止，不求均值是为了防止舍入误差			
-	//2.速度环的输入会让直立不稳定，添加一个低通滤波器防止高频干扰
+	Now_velocity = (Encoder_Left + Encoder_Right) / 2 * proportion;							//这里的0是预期值，即速度为零静止，不求均值是为了防止舍入误差			
+
 	//LPF公式：滤波结果=a*上一次采样值+(1-a)本次滤波的结果
-	Enc_ERR_Lowout = (1 - a) * Enc_ERR + a * Enc_ERR_Lowout_Last;
-	Enc_ERR_Lowout_Last = Enc_ERR_Lowout;
-	//3.对速度进行积分，得出位移
-	Enc_ERR_S += Enc_ERR_Lowout;													//误差积分
-	//4.对积分进行限幅
-	Enc_ERR_S = Enc_ERR_S > 10000 ? 10000 : (Enc_ERR_S < (-10000) ? (-10000) : Enc_ERR_S);
-	//5.速度环控制输出计算
-	PWM_out = Velocity_D * Enc_ERR_Lowout + Velocity_I * Enc_ERR_S;
+//	Enc_ERR_Lowout = (1 - a) * Enc_ERR + a * Enc_ERR_Lowout_Last;
+//	Enc_ERR_Lowout_Last = Enc_ERR_Lowout;
+//	//3.对速度进行积分，得出位移
+//	Enc_ERR_S += Enc_ERR_Lowout;													//误差积分
+//	//4.对积分进行限幅
+//	Enc_ERR_S = Enc_ERR_S > 10000 ? 10000 : (Enc_ERR_S < (-10000) ? (-10000) : Enc_ERR_S);
+//	//5.速度环控制输出计算
+//	PWM_out = Velocity_D * Enc_ERR_Lowout + Velocity_I * Enc_ERR_S;
 	
 	return PWM_out;
 }

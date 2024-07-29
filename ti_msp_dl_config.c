@@ -175,7 +175,7 @@ SYSCONFIG_WEAK void SYSCFG_DL_GPIO_init(void)
     DL_GPIO_clearInterruptStatus(GPIOA, KEY_PIN_18_PIN);
     DL_GPIO_enableInterrupt(GPIOA, KEY_PIN_18_PIN);
     DL_GPIO_setLowerPinsPolarity(GPIOB, DL_GPIO_PIN_2_EDGE_RISE |
-		DL_GPIO_PIN_6_EDGE_RISE);
+		DL_GPIO_PIN_7_EDGE_RISE);
     DL_GPIO_clearInterruptStatus(GPIOB, GPIO_Encoder_PIN_Right_A_PIN |
 		GPIO_Encoder_PIN_Left_A_PIN);
     DL_GPIO_enableInterrupt(GPIOB, GPIO_Encoder_PIN_Right_A_PIN |
@@ -327,7 +327,6 @@ SYSCONFIG_WEAK void SYSCFG_DL_TIMER_0_init(void) {
     DL_TimerG_initTimerMode(TIMER_0_INST,
         (DL_TimerG_TimerConfig *) &gTIMER_0TimerConfig);
     DL_TimerG_enableInterrupt(TIMER_0_INST , DL_TIMERG_INTERRUPT_ZERO_EVENT);
-	NVIC_SetPriority(TIMER_0_INST_INT_IRQN, 3);
     DL_TimerG_enableClock(TIMER_0_INST);
 
 

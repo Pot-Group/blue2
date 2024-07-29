@@ -196,13 +196,13 @@ extern "C" {
 /* Defines for PIN_Right_B: GPIOB.3 with pinCMx 16 on package pin 51 */
 #define GPIO_Encoder_PIN_Right_B_PIN                             (DL_GPIO_PIN_3)
 #define GPIO_Encoder_PIN_Right_B_IOMUX                           (IOMUX_PINCM16)
-/* Defines for PIN_Left_A: GPIOB.6 with pinCMx 23 on package pin 58 */
-#define GPIO_Encoder_PIN_Left_A_IIDX                         (DL_GPIO_IIDX_DIO6)
-#define GPIO_Encoder_PIN_Left_A_PIN                              (DL_GPIO_PIN_6)
-#define GPIO_Encoder_PIN_Left_A_IOMUX                            (IOMUX_PINCM23)
-/* Defines for PIN_Left_B: GPIOB.7 with pinCMx 24 on package pin 59 */
-#define GPIO_Encoder_PIN_Left_B_PIN                              (DL_GPIO_PIN_7)
-#define GPIO_Encoder_PIN_Left_B_IOMUX                            (IOMUX_PINCM24)
+/* Defines for PIN_Left_A: GPIOB.7 with pinCMx 24 on package pin 59 */
+#define GPIO_Encoder_PIN_Left_A_IIDX                         (DL_GPIO_IIDX_DIO7)
+#define GPIO_Encoder_PIN_Left_A_PIN                              (DL_GPIO_PIN_7)
+#define GPIO_Encoder_PIN_Left_A_IOMUX                            (IOMUX_PINCM24)
+/* Defines for PIN_Left_B: GPIOB.6 with pinCMx 23 on package pin 58 */
+#define GPIO_Encoder_PIN_Left_B_PIN                              (DL_GPIO_PIN_6)
+#define GPIO_Encoder_PIN_Left_B_IOMUX                            (IOMUX_PINCM23)
 /* Port definition for Pin Group GPIO_LineGet */
 #define GPIO_LineGet_PORT                                                (GPIOB)
 

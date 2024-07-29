@@ -53,13 +53,13 @@ void LineWalking(void)
 //	printf("LineR2：%d\n",LineR2);
 //	
 //	delay_ms(500);
-//	
+	
 //	if( (LineL2 == LOW || LineR1 == LOW) && LineR2 == LOW) //右锐角：右大弯,low表示检测到黑线
 //    {
 //      	Motor_TurnRight(150);
 //				
 //    }
-		
+//		
 //    else if ( LineL1 == LOW && (LineR1 == LOW || LineL2 == LOW)) //左锐角左大弯
 //		{ 
 //      	Motor_Turnleft(150);
@@ -68,13 +68,13 @@ void LineWalking(void)
 		
     if( LineL1 == 0 ) //左最外侧检测
     {  
-				Motor_Turnleft(450);
+				Motor_Turnleft(800);
 				
 		}
 		
     else if ( LineR2 == 0) //右最外侧检测
     {  
-				Motor_TurnRight(450);
+				Motor_TurnRight(800);
 		}
 		
     else if (LineL2 == 0 && LineR1 != 0) //中间黑线上的传感器微调车左转
@@ -89,7 +89,7 @@ void LineWalking(void)
 		
     else if(LineL1 && LineR2  ) // 都是黑色, 加速前进
     {  
-				Motor_straight(0);
+				Motor_straight(200);
 		}	
-		else if (LineL1 != 0 && LineL2 != 0 && LineR1 != 0 && LineR2 != 0) Motor_Stop(0);
+//	 else if (LineL1 != 0 && LineL2 != 0 && LineR1 != 0 && LineR2 != 0) Motor_Stop(0);
 }

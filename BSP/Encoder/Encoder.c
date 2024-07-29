@@ -15,7 +15,7 @@ int16_t	 Encoder_left_out = 0,
 
 void Encoder_Get(){	
 			static float low_pass = 0.7;
-			static int16_t Encoder_left = 0,
+			int16_t Encoder_left = 0,
 										 Encoder_right = 0;
 	
 	
@@ -27,8 +27,10 @@ void Encoder_Get(){
 			//Encoder_right_out = Encoder_right_out * low_pass + Encoder_right * (1 - low_pass);
 			Right_Count = 0;
    
-			printf("Encoder_left_out: %d\n",Encoder_left); 
-			printf("Encoder_right_out: %d\n",Encoder_right);
+//			printf("Encoder_left_out: %d\n",Encoder_left); 
+//			printf("Encoder_right_out: %d\n",Encoder_right);
+	
+	printf("Encoder_right_out: %d\n",(Encoder_right+Encoder_left)/2);
 }
 
 
