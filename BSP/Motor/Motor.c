@@ -8,7 +8,7 @@
 
 uint8_t direction = 0;											//电机状态标志位   1正转    0反转
 uint8_t STAO = 0;   											//启停标志位       1启动    0停止
-uint16_t Vlocity_init = 3000;										//速度变量
+uint16_t Vlocity_init = 2500;										//速度变量
 
 /*
 *装载函数
@@ -56,6 +56,25 @@ float Duty_Limit(int16_t Duty)
 //			 Duty =  4000;	
 		
 		return Duty;
+}
+
+/*
+***  左电机PWM驱动
+*/
+void Moter_Left_Pwm(uint16_t duty){
+	PwmA_Duty_Set(0,0);																
+	PwmA_Duty_Set(Duty_Limit(duty),1);
+
+}
+
+
+/*
+***  电右机PWM驱动
+*/
+void Moter_Right_Pwm(uint16_t duty){
+	PwmB_Duty_Set(0,0);
+	PwmB_Duty_Set(Duty_Limit(duty),1);
+
 }
 
 

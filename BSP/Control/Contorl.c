@@ -23,10 +23,11 @@ void Interrupt_Solution(void){
 	int Turn_out;
 	delay_ms(20);	
 	Now_angle = Mpu6050_Getdata(&Mpu_init);
-	Turn_out = Position_PID(&Angle_PID,Aim_angle,Now_angle);
+	Turn_out = Angle_Position_PID(&Angle_PID,Aim_angle,Now_angle);
 	
-	if(count_flag == 1){	
-		if(Turn_out > 0)Motor_TurnRight(Turn_out);
+	if(count_flag == 1){
+		if(Turn_out == 0) Motor_straight(Vlocity_init);
+		else if(Turn_out > 0)Motor_TurnRight(Turn_out);
 		else if(Turn_out < 0){
 			Turn_out = -Turn_out;
 			Motor_Turnleft(Turn_out);
@@ -64,18 +65,19 @@ float Mpu6050_Getdata(Mpu_typedef * Mpu_yaw){
 			
 			else {
 				yaw =  yaw - Mpu_yaw->yaw;
-						
+				yaw =  yaw * (1 - a) + Mpu_yaw->Last_yaw * a;
+				Mpu_yaw->Last_yaw = yaw;
 			}
 						
 		}
-	if(count == 700 && count_flag == 0 && yaw != 0) {
+	if(count == 600 && count_flag == 0 && yaw != 0) {
 		Mpu_yaw->yaw = yaw;		
 		count_flag = 1;
         DL_GPIO_setPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);  //输出高电平
         
 	}
 	
-	printf("yaw1 = %f %f %d\r\n", Mpu_yaw->yaw,yaw,count);
+//	printf("yaw1 = %f %f %d\r\n", Mpu_yaw->yaw,yaw,count);
 		
 		return yaw;
 }	
@@ -98,7 +100,7 @@ int Angle_Ring(float Aim_angle,float Now_anlge)
 }
 
 
-int Position_PID(PIDtypedef *PID,float Target_value,float Now_value){
+int Angle_Position_PID(PIDtypedef *PID,float Target_value,float Now_value){
 	
 	PID->Now_error = Target_value - Now_value;
 
@@ -106,7 +108,7 @@ int Position_PID(PIDtypedef *PID,float Target_value,float Now_value){
 	
 	PID->Last_Error = PID->Now_error ;
 	
-	return PID->Output;
+	return (PID->Output * 100);
 }
 
 void PID_set(PIDtypedef *PID,float P,float I,float D){
@@ -123,7 +125,7 @@ void PID_set(PIDtypedef *PID,float P,float I,float D){
 
 void PID_init(){
 	
-		PID_set(&Angle_PID,7.0,0,0);
+		PID_set(&Angle_PID,0.8,0,10);
 
 
 

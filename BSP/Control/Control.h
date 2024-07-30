@@ -48,7 +48,7 @@ int Velocity_Con(int Aim_velocity);
 
 float Mpu6050_Getdata( Mpu_typedef * Mpu_yaw);
 
-int Position_PID(PIDtypedef *PID,float Target_value,float Now_value);
+int Angle_Position_PID(PIDtypedef *PID,float Target_value,float Now_value);
 int Angle_Ring(float Aim_angle,float Now_anlge);
 void PID_set(PIDtypedef *PID,float P,float I,float D);
 void PID_init();

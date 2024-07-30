@@ -14,6 +14,6 @@ extern float Encoder_Get();
 
 
 extern int16_t	 Encoder_left_out,
-							 Encoder_right_out;
+				 Encoder_right_out;
 
 #endif
