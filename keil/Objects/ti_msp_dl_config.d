@@ -1,5 +1,5 @@
-./objects/ti_msp_dl_config.o: ..\ti_msp_dl_config.c \
-  ..\..\All_contoll\ti_msp_dl_config.h ..\..\source\ti\devices\msp\msp.h \
+./objects/ti_msp_dl_config.o: ..\ti_msp_dl_config.c ..\ti_msp_dl_config.h \
+  ..\..\source\ti\devices\msp\msp.h \
   ..\..\source\ti\devices\DeviceFamily.h \
   ..\..\source\ti\devices\msp\m0p\mspm0g350x.h \
   D:\Keil_v5_mdk\ARM\ARMCLANG\Bin\..\include\stdint.h \

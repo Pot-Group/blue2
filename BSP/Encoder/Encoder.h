@@ -7,13 +7,11 @@
 extern volatile int32_t Left_Count;
 extern volatile int32_t Right_Count;
 
-int Read_Speed(int Encoder_Num);										//读取编码器速度
-extern void Encoder_Get(void);
+int Read_Speed(int Encoder_Num);									//读取编码器速度
+extern float Encoder_Get();
 
-extern unsigned char Flag_2ms;
-extern unsigned char Flag_6ms;
-extern unsigned char Flag_20ms;  
-extern unsigned char Flag_50ms; 
+//void Encoder_datatest();
+
 
 extern int16_t	 Encoder_left_out,
 							 Encoder_right_out;

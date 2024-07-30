@@ -174,6 +174,12 @@ extern "C" {
 /* Defines for STATE: GPIOA.7 with pinCMx 14 on package pin 49 */
 #define HC05_STATE_PIN                                           (DL_GPIO_PIN_7)
 #define HC05_STATE_IOMUX                                         (IOMUX_PINCM14)
+/* Port definition for Pin Group GPIO_LED */
+#define GPIO_LED_PORT                                                    (GPIOA)
+
+/* Defines for PIN_0: GPIOA.2 with pinCMx 7 on package pin 42 */
+#define GPIO_LED_PIN_0_PIN                                       (DL_GPIO_PIN_2)
+#define GPIO_LED_PIN_0_IOMUX                                      (IOMUX_PINCM7)
 /* Port definition for Pin Group GPIO */
 #define GPIO_PORT                                                        (GPIOA)
 

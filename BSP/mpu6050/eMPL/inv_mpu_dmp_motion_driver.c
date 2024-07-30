@@ -1271,7 +1271,11 @@ int dmp_read_fifo(short *gyro, short *accel, long *quat,
 {
     unsigned char fifo_data[MAX_PACKET_LENGTH];
     unsigned char ii = 0;
-
+    
+	short gyro_0 = -18,
+		  gyro_1 = -2,
+		  gyro_2 = -12;
+	
     /* TODO: sensors[0] only changes when dmp_enable_feature is called. We can
      * cache this value and save some cycles.
      */
@@ -1330,13 +1334,14 @@ int dmp_read_fifo(short *gyro, short *accel, long *quat,
     }
 
     if (dmp.feature_mask & DMP_FEATURE_SEND_ANY_GYRO) {
-        gyro[0] = ((short)fifo_data[ii+0] << 8) | fifo_data[ii+1];
-        gyro[1] = ((short)fifo_data[ii+2] << 8) | fifo_data[ii+3];
-        gyro[2] = ((short)fifo_data[ii+4] << 8) | fifo_data[ii+5];
+        gyro[0] = (((short)fifo_data[ii+0] << 8) | fifo_data[ii+1] );
+        gyro[1] = (((short)fifo_data[ii+2] << 8) | fifo_data[ii+3] );
+        gyro[2] = (((short)fifo_data[ii+4] << 8) | fifo_data[ii+5] );
         ii += 6;
         sensors[0] |= INV_XYZ_GYRO;
     }
 
+	
     /* Gesture data is at the end of the DMP packet. Parse it and call
      * the gesture callbacks (if registered).
      */

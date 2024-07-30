@@ -18,6 +18,7 @@ volatile uint8_t  recv0_buff[RE_0_BUFF_LEN_MAX] = {0};
 volatile uint16_t recv0_length = 0;
 volatile uint8_t  recv0_flag = 0;
 
+
 void board_init(void)
 {
 	// SYSCFG≥ı ºªØ

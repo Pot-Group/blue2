@@ -13,30 +13,66 @@ unsigned char Flag_2ms,
 int16_t	 Encoder_left_out = 0,
 		 Encoder_right_out = 0;
 
-void Encoder_Get(){	
+//void Encoder_datatest()
+//{
+//	int32_t sum1,sum2;
+//	float Left_k,Right_k;
+//	for(int i; i<10000;i++){
+//		Motor_straight(2000);
+//		Encoder_left_out = Read_Speed(1);
+//		Left_Count = 0;
+//		Right_Count = 0;
+//	    sum1+=Encoder_left_out;
+//		sum2+=Encoder_right_out;
+//	
+//	}
+//	Left_k = sum1/1000;
+//	Right_k = sum2/1000;
+//	printf("Left_k: %f\n",Left_k);
+//	printf("Right_k : %f\n",Right_k);
+//}
+
+
+float Encoder_Get(int dat){	
 			static float low_pass = 0.7;
-			int16_t Encoder_left = 0,
-										 Encoder_right = 0;
+			float 	Encoder_left = 0.0,
+					Encoder_right = 0.0,
+					return_data;
 	
-	
+	switch(dat){
+		case 1:
 			Encoder_left_out = Read_Speed(1);				 
-			//Encoder_left_out = Encoder_left_out * low_pass + Encoder_left * (1 - low_pass);
+			//Encoder_left_out = Encoder_left_out * low_pass + Encoder_left * (1 - low_pass);		
 			Left_Count = 0;
-	
+		
+		    return_data = Encoder_left_out;
+			break;
+		case 2:
 			Encoder_right_out = Read_Speed(2);
-			//Encoder_right_out =Encoder_right_out Encoder_right_out * low_pass + Encoder_right * (1 - low_pass);
+			//Encoder_right_out =Encoder_right_out * Encoder_right_out * low_pass + Encoder_right * (1 - low_pass);
 			Right_Count = 0;
-   
+			return_data = Encoder_right_out;
+			break;
+		default : break;
+	}
+	
+//			Encoder_left_out = Read_Speed(1);
+//			Left_Count = 0;
+//			Encoder_right_out = Read_Speed(2);
+//			Right_Count = 0;
 //			printf("Encoder_left_out: %d\n",Encoder_left_out); 
 //			printf("Encoder_right_out: %d\n",Encoder_right_out);
+//			printf("arr:%f\n",(Encoder_right_out+Encoder_left_out)*0.5);
 	
+			return return_data;
+   
+			
+//	
 //	printf("Encoder_right_out: %d\n",(Encoder_right+Encoder_left)/2);
 }
 
 
-//void Encoder_count_clear(int32_t *count){
-//		*count = 0;		
-//}
+
 
 /**************
 ±àÂëÆ÷

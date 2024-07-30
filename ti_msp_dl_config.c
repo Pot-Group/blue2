@@ -139,6 +139,10 @@ SYSCONFIG_WEAK void SYSCFG_DL_GPIO_init(void)
 
     DL_GPIO_initDigitalInput(HC05_STATE_IOMUX);
 
+    DL_GPIO_initDigitalOutputFeatures(GPIO_LED_PIN_0_IOMUX,
+		 DL_GPIO_INVERSION_DISABLE, DL_GPIO_RESISTOR_PULL_DOWN,
+		 DL_GPIO_DRIVE_STRENGTH_LOW, DL_GPIO_HIZ_DISABLE);
+
     DL_GPIO_initDigitalOutput(GPIO_SCL_IOMUX);
 
     DL_GPIO_initDigitalOutput(GPIO_SDA_IOMUX);
@@ -167,9 +171,11 @@ SYSCONFIG_WEAK void SYSCFG_DL_GPIO_init(void)
 
     DL_GPIO_initDigitalInput(GPIO_LineGet_PIN_Line_Right2_IOMUX);
 
+    DL_GPIO_clearPins(GPIOA, GPIO_LED_PIN_0_PIN);
     DL_GPIO_setPins(GPIOA, GPIO_SCL_PIN |
 		GPIO_SDA_PIN);
-    DL_GPIO_enableOutput(GPIOA, GPIO_SCL_PIN |
+    DL_GPIO_enableOutput(GPIOA, GPIO_LED_PIN_0_PIN |
+		GPIO_SCL_PIN |
 		GPIO_SDA_PIN);
     DL_GPIO_setUpperPinsPolarity(GPIOA, DL_GPIO_PIN_18_EDGE_RISE);
     DL_GPIO_clearInterruptStatus(GPIOA, KEY_PIN_18_PIN);

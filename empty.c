@@ -37,57 +37,72 @@
 #include "mpu6050.h"
 #include "inv_mpu.h"
 
+unsigned int T_2ms  = 0;
+unsigned int T_6ms = 0;
+unsigned int T_20ms = 0;
+unsigned int T_50ms = 0;
+
+float ind = 0.0f;
+
+
+
 int main(void)
 {
 	 SYSCFG_DL_init();
 	 board_init();
-     Bluetooth_Init();
-	 NVIC_ClearPendingIRQ(TIMER_0_INST_INT_IRQN);				//定时器0中断清零标志位
+     //Bluetooth_Init();
+	 //NVIC_ClearPendingIRQ(TIMER_0_INST_INT_IRQN);				//定时器0中断清零标志位
 	 DL_TimerG_startCounter(TIMER_0_INST); 
-	 NVIC_EnableIRQ(TIMER_0_INST_INT_IRQN);						//定时器0中断使能
+	 //NVIC_EnableIRQ(TIMER_0_INST_INT_IRQN);						//定时器0中断使能
 	 MPU6050_Init();
-	 NVIC_EnableIRQ(GPIO_Encoder_INT_IRQN);						//编码器中断使能	
-	
-	
-	 uint8_t ret = 1;
-	 uint8_t point = 0;
-     float pitch=0,roll=0,yaw=0;   //欧拉角读取
-	 printf("start\r\n");
+	PID_init();
+	 NVIC_EnableIRQ(GPIO_Encoder_INT_IRQN);						//编码器中断使能			
+//	 uint8_t ret = 1;
+//	 uint8_t point = 0;
+     //float pitch=0,roll=0,yaw=0;   //欧拉角读取
+	 //printf("start\r\n");
 		//DMP初始化
       while( mpu_dmp_init() )
       {
             printf("dmp error\r\n");
-            delay_ms(200);
+            delay_ms(50);
       }
 	  printf("Initialization Data Succeed \r\n");
 	  
-	  
+	 // Encoder_datatest();
     while (1)
     {
 			//接收蓝牙数据
-            Receive_Bluetooth_Data();
+            //Receive_Bluetooth_Data();
             //蓝牙发送数据
-            BLE_send_String((uint8_t *)"LC-MSPM0G3507\n");
+            //BLE_send_String((uint8_t *)"LC-MSPM0G3507\n");
+		
+		//Mpu_Getdata();
+		//Mpu6050_Getdata();
+		
 //		pitch = (char)pitch;
-//			Send_Bluetooth_Data(&pitch);
-//            delay_ms(1000);
+//			Send_Bluetooth_Data(&pitch);           
 			//获取欧拉角
 //            if( mpu_dmp_get_data(&pitch,&roll,&yaw) == 0 )
 //            {
 //				 //printf("%d, %d, %d \r\n", (int)pitch,(int)roll,(int)yaw);
 ////                printf("\r\nroll =%d\r\n", (int)roll);
-////                printf("\r\nyaw =%d\r\n", (int)yaw);
+//                printf("\r\nyaw =%f\r\n", yaw);
 //            }
 //            delay_ms(20);//根据设置的采样率，不可设置延时过大
 			Interrupt_Solution();
-
+//		DL_GPIO_clearPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);  //输出高电平
+//        delay_ms(1000);//延时大概1S
+//        DL_GPIO_setPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);  //输出高电平
+//        delay_ms(1000);//延时大概1S
+//delay_ms(1000);
 //		Motor_Stop(0);
 //		Encoder_Get();
 //       LineWalking();
 //		Motor_Stop(0);
 //		Motor_TurnRight(1000);
 //			Velocity_Con(0);
-//Motor_straight(0);
+//       Motor_straight(3000);
 
 
 	}
@@ -95,41 +110,38 @@ int main(void)
 
 void TIMER_0_INST_IRQHandler(void)
 {
-		unsigned int T_2ms;
-		unsigned int T_6ms;
-		unsigned int T_20ms;
-		unsigned int T_50ms;
+		
 	
    
     switch( DL_TimerG_getPendingInterrupt(TIMER_0_INST) ){
 			case DL_TIMER_IIDX_ZERO:
 				
-//			Left_Count ++;
-//			Right_Count ++;
+
 			
-					T_2ms +=1;
-					T_6ms +=1;
-					T_20ms +=1;	
-					T_50ms +=1;
+					T_2ms ++;
+					T_6ms ++;
+					T_20ms ++;	
+					T_50ms ++;
 			
 			break;            
 			default:								
             break;
 			} 
+		//printf("%d\n",Flag.T_6ms);
 		if(T_2ms == 2) { 
-			Flag_2ms = 1;
+			Flag.T_2ms = 1;
 		  T_2ms = 0;   
 		}
 		if(T_6ms == 6) {
-			Flag_6ms = 1;
+			Flag.T_6ms = 1;
 			T_6ms = 0;
 		}
 		if(T_20ms == 20) {
-			Flag_20ms = 1;
+			Flag.T_20ms = 1;
 			T_20ms = 0;
 		}
 		if(T_50ms == 50) {
-			Flag_50ms = 1;
+			Flag.T_50ms = 1;
 			T_50ms = 0;
 		}
 	

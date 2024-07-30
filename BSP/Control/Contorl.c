@@ -1,118 +1,173 @@
 #include "Control.h"
 #include "stdio.h"
 
-float Velocity_D = 0,Velocity_I = 0;					//ËÙ¶È»·KP¡¢KI
+float Velocity_D = 0,Velocity_I = 0;					//ï¿½Ù¶È»ï¿½KPï¿½ï¿½KI
 
-int Velocity_out,PWM_out;								//ËÙ¶È»·µÄÊä³ö
-int Moto1,Moto2;												//Á½¸öµç»úµÄÊä³öÁ¿
+int Velocity_out,PWM_out;								//ï¿½Ù¶È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+int Moto1,Moto2;												//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 int Encoder_Left,Encoder_Right,
 			Motor_pwm;
-extern PID pid; 
+//PID pid; 
+
+int16_t count = 0;
+uint8_t count_flag = 0;
+
+Time0 Flag;
+Mpu_typedef Mpu_init;
+PIDtypedef Angle_PID; 
+
 
 void Interrupt_Solution(void){
-	if(Flag_2ms == 1){
-			
-		Flag_2ms = 0;
-				
-	}
-	if(Flag_20ms == 1){
+	int Time_count;
+	float Aim_angle = 0 ,Now_angle;
+	int Turn_out;
+	delay_ms(20);	
+	Now_angle = Mpu6050_Getdata(&Mpu_init);
+	Turn_out = Position_PID(&Angle_PID,Aim_angle,Now_angle);
+	
+	if(count_flag == 1){	
+		if(Turn_out > 0)Motor_TurnRight(Turn_out);
+		else if(Turn_out < 0){
+			Turn_out = -Turn_out;
+			Motor_Turnleft(Turn_out);
+		}
 		
-		
-		Flag_20ms = 0;
 	}
 	
-	Encoder_Get();
-	Motor_pwm = Velocity_Con(4000);
 	
-	printf("Motor_pwm %d\n", Motor_pwm);
-	Motor_straight(Motor_pwm);
+//	printf("Turn_out %d\n", Turn_out);
+
+	
+	//Time_count ++;
+	
+	
+
+
+	
+//	Motor_pwm = Velocity_Con(0);
+//	
+//	//printf("%d ,%d\n", Vlocity_init,Motor_pwm);
+//	Motor_straight(Motor_pwm);
 	
 }
-//void EXTI9_5_IRQHandler(void)								//ÖÐ¶Ï·þÎñ³ÌÐò
-//{
-//	if(EXTI_GetITStatus(EXTI_Line5) != 0)				//ÈôIT±êÖ¾Î»²»Îª0¼´±íÊ¾´¥·¢ÖÐ¶Ï
-//	{
-//		if(PBin(5) == 0)										//ÖÐ¶ÏÎªÏÂ½µÑØ´¥·¢£¬´¥·¢ºó»á±äÎªµÍµçÆ½£¬ÓÉ´ËÔÙ´ÎÅÐ¶Ï
-//		{
-//			EXTI_ClearITPendingBit(EXTI_Line5);		
-//			
-//			//1.²É¼¯±àÂëÆ÷µÄÊýÖµ
-//			Encoder_Left = -Read_Speed(2);				//Á½¸öµç»úÏà¶Ô°²×°£¬±àÂëÆ÷·½ÏòÐý×ª180¡ã£¬²ÉÖµÏà·´£¬ÎªÁËÈÃ±àÂëÆ÷Êä³ö¼«ÐÔÒ»ÖÂ£¬ÐèÒªÈ¡·´
-//			Encoder_Right = Read_Speed(4);
-//			
-//			//2.°Ñ²É¼¯µ½µÄÊý¾ÝÑ¹ÈëËÙ¶È±Õ»·¿ØÖÆÖÐ¡¢¼ÆËãÊä³ö¿ØÖÆÁ¿
-//			Velocity_out = Velocity_Con(Encoder_Left,Encoder_Right);
-//			
-//			PWM_out = Vertical_out + Vertical_P * Velocity_out;			//×îÖÕÊä³ö
-//			//3.°ÑÊä³öÁ¿¼ÓÔØµ½µç»úÉÏÍê³É¿ØÖÆ
-//			Moto1 = PWM_out - Turn_out;							//×óµç»ú
-//			Moto2 = PWM_out + Turn_out;							//ÓÒµç»ú
-//			M1 = Moto1;
-//			M2 = Moto2;
-//			Limit(&Moto1,&Moto2);
-//			Load(Moto1,Moto2);
-//		}
-//	}	
-//}
-
-/*************
-*Ñ²ÏßÎ»ÖÃÊ½PID
-*¹«Ê½Îª£º
-*Èë¿Ú²ÎÊý£ºopencvÊä³ö
-*·µ»Ø²ÎÊý£ºµç»ú²îËÙ´ò½Ç
-*************/
 
 
 
+float Mpu6050_Getdata(Mpu_typedef * Mpu_yaw){
+	
+	float pitch=0,roll=0,yaw = 0 ;  
+	static float a = 0.7;	
+	
+	if( mpu_dmp_get_data(&pitch,&roll,&yaw) == 0 )
+		{
+			if(count_flag == 0)count ++;			
+			
+			else {
+				yaw =  yaw - Mpu_yaw->yaw;
+						
+			}
+						
+		}
+	if(count == 700 && count_flag == 0 && yaw != 0) {
+		Mpu_yaw->yaw = yaw;		
+		count_flag = 1;
+        DL_GPIO_setPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);  //Êä³ö¸ßµçÆ½
+        
+	}
+	
+	printf("yaw1 = %f %f %d\r\n", Mpu_yaw->yaw,yaw,count);
+		
+		return yaw;
+}	
 
-/*************
-*ËÙ¶È»·¿ØÖÆ
-*¹«Ê½Îª£ºVelocity_out =Kp2*(Encoder_ real- Encoder_ expect)+Ki*S(Encoder_ real- Encoder_ expect)
-*Èë¿Ú²ÎÊý£º×óÓÒ±àÂëÆ÷µÄËÙ¶È
-*·µ»Ø²ÎÊý£ºËÙ¶È»·pidÊä³ö
-*************/
-//int Velocity_Con(int Encoder_Left,int Encoder_Right)
-//{
-//	static int PWM_out,Enc_ERR,Enc_ERR_Lowout,Enc_ERR_Lowout_Last,Enc_ERR_S;
-//	float a = 0.7;																		//Õâ¸öÏµÊýÊÇ×÷ÓÃÔÚµÍÍ¨ÂË²¨Æ÷ÉÏµÄ£¬ÒªÍ»³öÆäÖÐÒ»²¿·ÖµÄÐÅºÅ£¬Ò»°ã´óÓÚ0.5¼´¿É
-//	//1.¼ÆËãËÙ¶ÈÎó²î
-//	Enc_ERR = (Encoder_Left + Encoder_Right) - 0;							//ÕâÀïµÄ0ÊÇÔ¤ÆÚÖµ£¬¼´ËÙ¶ÈÎªÁã¾²Ö¹£¬²»Çó¾ùÖµÊÇÎªÁË·ÀÖ¹ÉáÈëÎó²î			
-//	//2.ËÙ¶È»·µÄÊäÈë»áÈÃÖ±Á¢²»ÎÈ¶¨£¬Ìí¼ÓÒ»¸öµÍÍ¨ÂË²¨Æ÷·ÀÖ¹¸ßÆµ¸ÉÈÅ
-//	//LPF¹«Ê½£ºÂË²¨½á¹û=a*ÉÏÒ»´Î²ÉÑùÖµ+(1-a)±¾´ÎÂË²¨µÄ½á¹û
-//	Enc_ERR_Lowout = (1 - a) * Enc_ERR + a * Enc_ERR_Lowout_Last;
-//	Enc_ERR_Lowout_Last = Enc_ERR_Lowout;
-//	//3.¶ÔËÙ¶È½øÐÐ»ý·Ö£¬µÃ³öÎ»ÒÆ
-//	Enc_ERR_S += Enc_ERR_Lowout;													//Îó²î»ý·Ö
-//	//4.¶Ô»ý·Ö½øÐÐÏÞ·ù
-//	Enc_ERR_S = Enc_ERR_S > 10000 ? 10000 : (Enc_ERR_S < (-10000) ? (-10000) : Enc_ERR_S);
-//	//5.ËÙ¶È»·¿ØÖÆÊä³ö¼ÆËã
-//	PWM_out = Velocity_D * Enc_ERR_Lowout + Velocity_I * Enc_ERR_S;
+int Angle_Ring(float Aim_angle,float Now_anlge)
+{
+	
+//	int Pwm_out = 0,Last_pwm_out;
 //	
-//	return PWM_out;
-//}
+//	Angle_now_error = Aim_angle - Now_anlge;
+//	
+//	//printf("\r\n Angle_now_error =%f\r\n", Angle_now_error);
+//	
+//	Pwm_out = (int)(Angle_P * Angle_now_error + Angle_D * (Angle_now_error - Angle_last_error));
+
+//	Angle_last_error = Angle_now_error;
+//	
+//	return Pwm_out;
+	
+}
+
+
+int Position_PID(PIDtypedef *PID,float Target_value,float Now_value){
+	
+	PID->Now_error = Target_value - Now_value;
+
+	PID->Output = PID->P * PID->Now_error + PID->D *  (PID->Now_error - PID->Last_Error);
+	
+	PID->Last_Error = PID->Now_error ;
+	
+	return PID->Output;
+}
+
+void PID_set(PIDtypedef *PID,float P,float I,float D){
+
+	
+		PID->P = P;
+		PID->D = D;
+		PID->I = I;
+		PID->Now_error = 0;
+		PID->Last_Error = 0;
+		
+	
+}
+
+void PID_init(){
+	
+		PID_set(&Angle_PID,7.0,0,0);
+
+
+
+}
+
 
 
 int Velocity_Con(int Aim_velocity)
 {
-	static int Now_velocity , Now_error,Last_error , Pwm_out,
-			   Velocity_P = 1, Velocity_I,Velocity_D;
+	static float Now_velocity ,Last_velocity, Now_error,Last_error , Pwm_out,Last_pwm_out,
+			   Velocity_P = 4.8 , Velocity_I,Velocity_D = 0;
 	
-	static float proportion = 10.1,
+	float left_v,right_v;
+	
+	static float proportion = 100.32,
 				 a = 0.7;	
 						
-	//Õâ¸öÏµÊýÊÇ×÷ÓÃÔÚµÍÍ¨ÂË²¨Æ÷ÉÏµÄ£¬ÒªÍ»³öÆäÖÐÒ»²¿·ÖµÄÐÅºÅ£¬Ò»°ã´óÓÚ0.5¼´¿É
-	//1.¼ÆËãËÙ¶ÈÎó²î
-	Encoder_Get();
+	
+	left_v = Encoder_Get(1);
+	right_v = Encoder_Get(2);
+//			printf("left_v: %f\n",left_v); 
+//			printf("right_v: %f\n",right_v);
 			
-	Now_velocity = (Encoder_left_out + Encoder_right_out) / 2 * proportion;							//ÕâÀïµÄ0ÊÇÔ¤ÆÚÖµ£¬¼´ËÙ¶ÈÎªÁã¾²Ö¹£¬²»Çó¾ùÖµÊÇÎªÁË·ÀÖ¹ÉáÈëÎó²î			
+	Now_velocity = (left_v + right_v) * proportion / 2 ;							//ï¿½ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½Ô¤ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½Îªï¿½ã¾²Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½Îªï¿½Ë·ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½			
+	
+	//Now_velocity = Last_velocity * a + Now_velocity *(1 - a);
+	
+	Last_velocity = Now_velocity;
+	
+	//printf("Now_velocity: %f\n",Now_velocity);
 	
 	Now_error = Aim_velocity - Now_velocity ;
 	
-	Pwm_out = Velocity_P *Now_error + Velocity_D * (Now_error - Last_error);
+	Pwm_out = Velocity_P * Now_error + Velocity_D * (Now_error - Last_error);
+			
+		Last_error = Now_error;
+			
+		Pwm_out = Last_pwm_out * a + Pwm_out *(1 - a);
 	
-	Last_error = Now_error;
+		Last_pwm_out = Pwm_out;
+		
 	
-	printf("Pwm_out: %d\n",Pwm_out); 
+	
+	//printf("Pwm_out: %f\n",Pwm_out); 
 	
 	return Pwm_out;
 }

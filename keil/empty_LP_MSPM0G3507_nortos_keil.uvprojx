@@ -474,6 +474,11 @@
               <FilePath>..\BSP\Motor\Motor.c</FilePath>
             </File>
             <File>
+              <FileName>dl_vref.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ti\dl_vref.c</FilePath>
+            </File>
+            <File>
               <FileName>Motor.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\BSP\Motor\Motor.h</FilePath>
@@ -513,11 +518,6 @@
         <Group>
           <GroupName>Driverlib</GroupName>
           <Files>
-            <File>
-              <FileName>dl_vref.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\ti\dl_vref.c</FilePath>
-            </File>
             <File>
               <FileName>dl_uart.c</FileName>
               <FileType>1</FileType>
