@@ -68,19 +68,25 @@ int main(void)
             delay_ms(50);
       }
 	  printf("Initialization Data Succeed \r\n");
-	  
+	  DL_GPIO_setPins(GPIO_Beep_PORT,GPIO_Beep_PIN_Beep_PIN);
 	 // Encoder_datatest();
     while (1)
     {
 		
-		LineWalking();
+		
+//		 One_question();
+//		LineWalking();  
+		
+		Interrupt_Solution(&Flag);       
+		
+//		Mpu6050_Getdata(&Mpu_data);
 			//接收蓝牙数据
             //Receive_Bluetooth_Data();
             //蓝牙发送数据
             //BLE_send_String((uint8_t *)"LC-MSPM0G3507\n");
 		
-		//Mpu_Getdata();
-		//Mpu6050_Getdata();
+		
+//		Mpu6050_Getdata(&Mpu_data);
 //		LineWalking();
 //			Interrupt_Solution();
 //		DL_GPIO_clearPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);  //输出高电平
@@ -120,22 +126,6 @@ void TIMER_0_INST_IRQHandler(void)
             break;
 			} 
 		//printf("%d\n",Flag.T_6ms);
-		if(T_2ms == 2) { 
-			Flag.T_2ms = 1;
-		  T_2ms = 0;   
-		}
-		if(T_6ms == 6) {
-			Flag.T_6ms = 1;
-			T_6ms = 0;
-		}
-		if(T_20ms == 20) {
-			Flag.T_20ms = 1;
-			T_20ms = 0;
-		}
-		if(T_50ms == 50) {
-			Flag.T_50ms = 1;
-			T_50ms = 0;
-		}
 	
 }
 

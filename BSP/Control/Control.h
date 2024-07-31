@@ -8,7 +8,7 @@ typedef struct
 {
 	float yaw;
 	float Last_yaw;
-
+	float Yaw_error;
 
 }Mpu_typedef;
 
@@ -33,22 +33,23 @@ extern PIDtypedef Angle_PID;
 //extern float yaw_error;
 
 typedef struct 
-{
+{	
+	unsigned char One;
+	unsigned char Two;
+	unsigned char Three;
+	unsigned char Four;
 	
-	 unsigned char T_2ms;
-	 unsigned char T_6ms;
-	 unsigned char T_20ms;  
-	 unsigned char T_50ms; 
-
-}Time0;
-
-extern Time0 Flag;
 
 
+}typedef_flag;
+
+extern typedef_flag Flag;
+
+void Turn_Funtion(float Aim_angle,float Now_angle);
 
 void PID_init();     
 
-int One_question();
+void One_question();
 
 
 

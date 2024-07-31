@@ -8,7 +8,7 @@
 
 float pidOutput; // PID控制器的输出
 
-PIDtypedef Line_PID = { 15, 0, 0 ,0 , 0 , 0 ,0};
+PIDtypedef Line_PID = { 10, 0, 8 ,0 , 0 , 0 ,0};
 /**
 * Function       GetLineWalking
 * @brief         获取巡线状态
@@ -19,12 +19,12 @@ PIDtypedef Line_PID = { 15, 0, 0 ,0 , 0 , 0 ,0};
 */
 void GetLineWalking(int sensors[SENSOR_COUNT])
 {
-    sensors[0] = DL_GPIO_readPins(GPIO_LineGet_PORT, GPIO_LineGet_PIN_Line_Left1_PIN); // L1
-    sensors[1] = DL_GPIO_readPins(GPIO_LineGet_PORT, GPIO_LineGet_PIN_Line_Left2_PIN); //L2
-    sensors[2] = DL_GPIO_readPins(GPIOA, DL_GPIO_PIN_12); // 假设LMid为GPIOA的DL_GPIO_PIN_12 M1
-    sensors[3] = DL_GPIO_readPins(GPIOA, DL_GPIO_PIN_13); // 假设RMid为GPIOA的DL_GPIO_PIN_13 M2
+    sensors[0] = DL_GPIO_readPins(GPIO_LineGet_PORT, GPIO_LineGet_PIN_Line_Left2_PIN);
+    sensors[1] = DL_GPIO_readPins(GPIO_LineGet_PORT, GPIO_LineGet_PIN_Line_Left1_PIN);
+    sensors[2] = !DL_GPIO_readPins(GPIOA, DL_GPIO_PIN_12); // 假设LMid为GPIOA的DL_GPIO_PIN_12 M1
+    sensors[3] = !DL_GPIO_readPins(GPIOA, DL_GPIO_PIN_13); // 假设RMid为GPIOA的DL_GPIO_PIN_13 M2
     sensors[4] = DL_GPIO_readPins(GPIO_LineGet_PORT, GPIO_LineGet_PIN_Line_Right1_PIN);  //R1
-    sensors[5] = DL_GPIO_readPins(GPIO_LineGet_PORT, GPIO_LineGet_PIN_Line_Right2_PIN);  //R1
+    sensors[5] = DL_GPIO_readPins(GPIO_LineGet_PORT, GPIO_LineGet_PIN_Line_Right2_PIN);  //R2
 }
 
 /**
@@ -41,7 +41,7 @@ void CalculateError(int sensors[SENSOR_COUNT], float *error)
 
     for (int i = 0; i < SENSOR_COUNT; i++)
     {
-        if (sensors[i] == LOW) // 如果检测到黑线
+        if (sensors[i] > 0) // 如果检测到黑线
         {
             detectedLinePosition += (i - CENTER_SENSOR + 0.5f);  //中心值为2.5 
             detectedLineCount++;
@@ -93,7 +93,7 @@ int PIDController( PIDtypedef * Line_PID,float error)
 */
 int LineWalking(void)
 {
-    int lineSensors[SENSOR_COUNT] = {1,1,1,1,1,1},
+    int lineSensors[SENSOR_COUNT] = {0,0,0,0,0,0},
 						pidOutput = 0;
     float error = 0;
 
@@ -101,20 +101,37 @@ int LineWalking(void)
     CalculateError(lineSensors, &error);
     pidOutput = PIDController(&Line_PID,error);
 	
+//	printf("0 : %d\n",lineSensors[0]);
+//	printf("1 : %d\n",lineSensors[1]);
+//	printf("2 : %d\n",lineSensors[2]);
+//	printf("3 : %d\n",lineSensors[3]);
+//	printf("4 : %d\n",lineSensors[4]);
+//	printf("5 : %d\n\n",lineSensors[5]);
+	
 	// 根据pidOutput调整电机速度
 	if(pidOutput == 0) Motor_straight(Vlocity_init);
 		else if(pidOutput > 0){
-			Motor_Turnleft(pidOutput);
 			
+			Motor_TurnRight(pidOutput);
 		}
 			else if(pidOutput < 0){
 			pidOutput = -pidOutput;
-			Motor_TurnRight(pidOutput);
+			Motor_Turnleft(pidOutput);
 			
 		}   		
 		
     // 返回值可以根据需要进行修改
-    if(lineSensors[0] == LOW || lineSensors[1] == LOW || lineSensors[4] == LOW || lineSensors[5] == LOW) return 1;
+    if(lineSensors[0] > 0  || lineSensors[1] > 0  || lineSensors[4] > 0 || lineSensors[5] > 0 || lineSensors[2] > 0 || lineSensors[3] > 0)
+	{
+				
+		return 1;
+	
+	}
+	else {
+				
 
-    return 0;
+		return 0;
+	
+	}
+    
 }

@@ -8,7 +8,7 @@
 
 uint8_t direction = 0;											//电机状态标志位   1正转    0反转
 uint8_t STAO = 0;   											//启停标志位       1启动    0停止
-uint16_t Vlocity_init = 2700;										//速度变量
+uint16_t Vlocity_init = 3000;										//速度变量
 
 /*
 *装载函数

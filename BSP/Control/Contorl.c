@@ -9,82 +9,132 @@ int Encoder_Left,Encoder_Right;
 //PID pid; 
 
 int16_t count = 0;
-uint8_t count_flag = 0;
+uint8_t count_flag = 0,
+		Stop_flag = 0;
 
-Time0 Flag;
+float Aim_angle = 0;
+
+typedef_flag Flag = {0,0,0,0};
 Mpu_typedef Mpu_data;
 
 PIDtypedef Angle_PID; 
 PIDtypedef Velocity_PID; 
 
-void Interrupt_Solution(void){
+void Interrupt_Solution(typedef_flag * Flag){
 	int Time_count;
 	float Aim_angle = 0 ,Now_angle;
 	int Turn_out ,Motor_pwm = 0;
 	delay_ms(20);	
 	Now_angle = Mpu6050_Getdata(&Mpu_data);
-	Turn_out = Angle_Position_PID(&Angle_PID,Aim_angle,Now_angle);
 	
 	if(count_flag == 1){
-		if(Turn_out == 0) Motor_straight(Vlocity_init);
-		else if(Turn_out > 0){
-			Motor_Turnleft(Turn_out);
-			DL_GPIO_clearPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);
-		}
-			else if(Turn_out < 0){
-			Turn_out = -Turn_out;
-			Motor_TurnRight(Turn_out);
-			DL_GPIO_setPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);
-		}
-			
-		if(LineWalking() == 1){
+	if(Flag->One == 0){
+		Turn_Funtion(Aim_angle,Now_angle);			
+		if(Flag->One == 0 && LineWalking() == 1){
+			Flag->One = 1;
 			Motor_pwm = Velocity_Con(4000);
 			Motor_straight(Motor_pwm);
-			DL_GPIO_clearPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);
-			delay_1ms(20);
+			delay_1ms(10);
+			DL_GPIO_clearPins(GPIO_Beep_PORT,GPIO_Beep_PIN_Beep_PIN);
+			delay_1ms(10);
+			DL_GPIO_setPins(GPIO_Beep_PORT,GPIO_Beep_PIN_Beep_PIN);
+			delay_1ms(10);
 			DL_GPIO_setPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);
+			delay_1ms(10);
+			DL_GPIO_clearPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);
+			delay_1ms(10);
+			Motor_Stop(0);
+				}				
+}		
+	else if(Flag->One == 1 && Flag->Two == 0){
+			
+			LineWalking();
+//			if(Now_angle > -139) {
+//				Flag->Three = 1;
+//				DL_GPIO_clearPins(GPIO_Beep_PORT,GPIO_Beep_PIN_Beep_PIN);
+//				delay_1ms(10);
+//				DL_GPIO_setPins(GPIO_Beep_PORT,GPIO_Beep_PIN_Beep_PIN);
+//			}
 		}
-//		else {
-//			
-//			Motor_Stop(0);
+//	else if( Flag->Three == 1 &&  Flag->One == 1 ){
+//			DL_GPIO_clearPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);
+//			delay_1ms(10);
+//		Flag->Two = 1;		
+//		Turn_Funtion(-155,Now_angle);
 //		
-//		}
-		
-	}
+//		
+//	}
+	
+	
+
+//	else if(Flag->One == 0 && LineWalking() == 1)
+	
+	
 //	Velocity_Con(4000);
 
-//	printf("Turn_out %d\n", Turn_out);	
-	//Time_count ++;		
+//	printf("Stop_flag %d\n", Flag->Stop);	
+		
 //	Motor_pwm = Velocity_Con(4000);
 //	
 //	//printf("%d ,%d\n", Vlocity_init,Motor_pwm);
 //	Motor_straight(Motor_pwm);
 	
 }
+printf("%d ,%d,%d\n", Flag->One,Flag->Two,Flag->Three);
+}
 
-int One_question(){
-	int Turn_out =0;
-	if(count_flag == 1){
+
+
+void One_question(Mpu_typedef *Mpudata){
+	int Time_count;
+	float Aim_angle = Mpudata->Yaw_error ,Now_angle;
+	int Turn_out ,Motor_pwm = 0;
+	delay_ms(20);	
+	Now_angle = Mpu6050_Getdata(&Mpu_data);
+	Turn_out = Angle_Position_PID(&Angle_PID,0,Now_angle);
+	
+	if(count_flag == 1 && Stop_flag ==0){
 		if(Turn_out == 0) Motor_straight(Vlocity_init);
 		else if(Turn_out > 0){
+			Motor_Turnleft(Turn_out);
+			DL_GPIO_clearPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);
+		}
+			else if(Turn_out < 0){
+			Turn_out = -Turn_out;
 			Motor_TurnRight(Turn_out);
+			DL_GPIO_setPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);
+		}
+			
+//		if(LineWalking() == 1){
+//			Stop_flag = 1;
+//			Motor_pwm = Velocity_Con(4000);
+//			Motor_straight(Motor_pwm);
+//			DL_GPIO_clearPins(GPIO_Beep_PORT,GPIO_Beep_PIN_Beep_PIN);
+//			delay_1ms(10);
+//			DL_GPIO_setPins(GPIO_Beep_PORT,GPIO_Beep_PIN_Beep_PIN);
+//			DL_GPIO_clearPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);
+//			delay_1ms(50);
+//			DL_GPIO_setPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);
+//		}
+//		
+		
+	}
+}
+
+void Turn_Funtion(float Aim_angle,float Now_angle){
+	int Turn_out;
+	Turn_out = Angle_Position_PID(&Angle_PID,Aim_angle,Now_angle);
+		if(Turn_out == 0) Motor_straight(Vlocity_init);
+		else if(Turn_out > 0){
+			Motor_Turnleft(Turn_out);
 			
 		}
 			else if(Turn_out < 0){
 			Turn_out = -Turn_out;
-			Motor_Turnleft(Turn_out);
+			Motor_TurnRight(Turn_out);
 			
 		}
-		
-	}
-//	if(LineWalking()){
-//		Velocity_Con(4000); 
-//		DL_GPIO_clearPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);
-//		delay_1ms(20);
-//		DL_GPIO_setPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);
-//	}
-	
-	return 1;
+
 }
 
 
@@ -104,14 +154,15 @@ float Mpu6050_Getdata(Mpu_typedef * Mpu_yaw){
 			}
 						
 		}
-	if(count == 600 && count_flag == 0 && yaw != 0) {
-		Mpu_yaw->yaw = yaw;		
+	if(count == 700 && count_flag == 0 && yaw != 0) {
+		Aim_angle = yaw;	
+		Mpu_yaw->Yaw_error = yaw;
 		count_flag = 1;
         DL_GPIO_setPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);  //输出高电平
         
 	}
 	
-//	printf("yaw1 = %f %f %d\r\n", Mpu_yaw->yaw,yaw,count);
+	printf("yaw1 = %f ,%d\r\n",yaw,count);
 		
 		return yaw;
 }	
@@ -177,7 +228,7 @@ void PID_set(PIDtypedef *PID,float P,float I,float D){
 
 void PID_init(){
 	
-		PID_set(&Angle_PID,0.3,0,1.2);
+		PID_set(&Angle_PID,0.3,0,0.2);
 		PID_set(&Velocity_PID,4.8,0,1.2);
 
 
