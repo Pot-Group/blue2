@@ -6,6 +6,8 @@
         BIN2：PA14                 		BIN1: PA25 | PA31
 */
 
+#define CAR_WIDTH 2
+
 uint8_t direction = 0;											//电机状态标志位   1正转    0反转
 uint8_t STAO = 0;   											//启停标志位       1启动    0停止
 uint16_t Vlocity_init = 2700;										//速度变量
@@ -72,6 +74,21 @@ void Moter_Right_Pwm(uint16_t duty){
 
 }
 
+void Moter_Move(int base_speed, int turn_speed){
+	/*
+	@param base_speed: 线速度
+	@param turn_speed: 角速度
+	*/										
+	int v_R; int v_L
+
+	v_R = base_speed - (turn_speed * CAR_WIDTH / 2);
+	v_L = base_speed + (turn_speed * CAR_WIDTH / 2);
+
+	Moter_Left_Pwm(v_L);
+	Moter_Right_Pwm(v_R);
+}
+
+
 
 void Motor_straight(int speed)										//电机直行,两轮正转
 {
@@ -82,7 +99,6 @@ void Motor_straight(int speed)										//电机直行,两轮正转
 	PwmB_Duty_Set(Duty_Limit(speed),1);
 	
 }
-
 
 
 void Motor_TurnRight(int speed)										//方向左转，左电机反转，右电机正转
