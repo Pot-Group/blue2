@@ -8,7 +8,7 @@
 
 uint8_t direction = 0;											//电机状态标志位   1正转    0反转
 uint8_t STAO = 0;   											//启停标志位       1启动    0停止
-uint16_t Vlocity_init = 2500;										//速度变量
+uint16_t Vlocity_init = 3000;										//速度变量
 
 /*
 *装载函数
@@ -90,7 +90,7 @@ void Motor_straight(float speed)										//电机直行,两轮正转
 
 
 
-void Motor_Turnleft(float speed)										//方向左转，左电机反转，右电机正转
+void Motor_TurnRight(float speed)										//方向左转，左电机反转，右电机正转
 
 {
 	int duty = 0;
@@ -104,10 +104,10 @@ void Motor_Turnleft(float speed)										//方向左转，左电机反转，右电机正转
 }
 
 
-void Motor_TurnRight(float speed)										//方向右转，左电机正转，右电机反转
+void Motor_Turnleft(float speed)										//方向右转，左电机正转，右电机反转
 
 {
-	int duty;
+	int duty = 0;
 	duty =  Vlocity_init - speed;
 	PwmA_Duty_Set(0,0);																
 	PwmA_Duty_Set(Duty_Limit(duty),1);

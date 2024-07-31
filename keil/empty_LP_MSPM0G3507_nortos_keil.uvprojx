@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>__MSPM0G3507__</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\source\third_party\CMSIS\Core\Include;..\..\source;..\BSP;..\..\oled;..\..\All_contoll;..\BSP\PWM;..\BSP\Motor;..\BSP\Encoder;..\BSP\UART;..\BSP\Control;..\BSP\Line_Follow;..\BSP\Blue_Connect;..\BSP\ADC_Get;..\BSP\mpu6050;..\BSP\mpu6050\eMPL</IncludePath>
+              <IncludePath>..\..\source\third_party\CMSIS\Core\Include;..\..\source;..\BSP;..\..\oled;..\..\All_contoll;..\BSP\PWM;..\BSP\Motor;..\BSP\Encoder;..\BSP\UART;..\BSP\Control;..\BSP\Line_Follow;..\BSP\Blue_Connect;..\BSP\ADC_Get;..\BSP\mpu6050;..\BSP\mpu6050\eMPL;..\BSP\OLED</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -512,6 +512,26 @@
               <FileName>Control.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\BSP\Control\Control.h</FilePath>
+            </File>
+            <File>
+              <FileName>bmp.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\BSP\OLED\bmp.h</FilePath>
+            </File>
+            <File>
+              <FileName>oled.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\OLED\oled.c</FilePath>
+            </File>
+            <File>
+              <FileName>oled.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\BSP\OLED\oled.h</FilePath>
+            </File>
+            <File>
+              <FileName>oledfont.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\BSP\OLED\oledfont.h</FilePath>
             </File>
           </Files>
         </Group>

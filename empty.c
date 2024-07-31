@@ -55,7 +55,7 @@ int main(void)
 	 DL_TimerG_startCounter(TIMER_0_INST); 
 	 //NVIC_EnableIRQ(TIMER_0_INST_INT_IRQN);						//定时器0中断使能
 	 MPU6050_Init();
-	PID_init();
+	 PID_init();
 	 NVIC_EnableIRQ(GPIO_Encoder_INT_IRQN);						//编码器中断使能			
 //	 uint8_t ret = 1;
 //	 uint8_t point = 0;
@@ -79,17 +79,7 @@ int main(void)
 		
 		//Mpu_Getdata();
 		//Mpu6050_Getdata();
-		
-//		pitch = (char)pitch;
-//			Send_Bluetooth_Data(&pitch);           
-			//获取欧拉角
-//            if( mpu_dmp_get_data(&pitch,&roll,&yaw) == 0 )
-//            {
-//				 //printf("%d, %d, %d \r\n", (int)pitch,(int)roll,(int)yaw);
-////                printf("\r\nroll =%d\r\n", (int)roll);
-//                printf("\r\nyaw =%f\r\n", yaw);
-//            }
-//            delay_ms(20);//根据设置的采样率，不可设置延时过大
+
 			Interrupt_Solution();
 //		DL_GPIO_clearPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);  //输出高电平
 //        delay_ms(1000);//延时大概1S
@@ -100,7 +90,7 @@ int main(void)
 //		Encoder_Get();
 //       LineWalking();
 //		Motor_Stop(0);
-//		Motor_TurnRight(1000);
+//		Motor_Turnleft(500);
 //			Velocity_Con(0);
 //       Motor_straight(3000);
 

@@ -123,6 +123,22 @@ extern "C" {
 
 
 
+
+/* Defines for I2C_OLED */
+#define I2C_OLED_INST                                                       I2C1
+#define I2C_OLED_INST_IRQHandler                                 I2C1_IRQHandler
+#define I2C_OLED_INST_INT_IRQN                                     I2C1_INT_IRQn
+#define I2C_OLED_BUS_SPEED_HZ                                             400000
+#define GPIO_I2C_OLED_SDA_PORT                                             GPIOA
+#define GPIO_I2C_OLED_SDA_PIN                                     DL_GPIO_PIN_16
+#define GPIO_I2C_OLED_IOMUX_SDA                                  (IOMUX_PINCM38)
+#define GPIO_I2C_OLED_IOMUX_SDA_FUNC                   IOMUX_PINCM38_PF_I2C1_SDA
+#define GPIO_I2C_OLED_SCL_PORT                                             GPIOA
+#define GPIO_I2C_OLED_SCL_PIN                                     DL_GPIO_PIN_17
+#define GPIO_I2C_OLED_IOMUX_SCL                                  (IOMUX_PINCM39)
+#define GPIO_I2C_OLED_IOMUX_SCL_FUNC                   IOMUX_PINCM39_PF_I2C1_SCL
+
+
 /* Defines for USB_TLL */
 #define USB_TLL_INST                                                       UART0
 #define USB_TLL_INST_IRQHandler                                 UART0_IRQHandler
@@ -180,6 +196,12 @@ extern "C" {
 /* Defines for PIN_0: GPIOA.2 with pinCMx 7 on package pin 42 */
 #define GPIO_LED_PIN_0_PIN                                       (DL_GPIO_PIN_2)
 #define GPIO_LED_PIN_0_IOMUX                                      (IOMUX_PINCM7)
+/* Port definition for Pin Group GPIO_Beep */
+#define GPIO_Beep_PORT                                                   (GPIOA)
+
+/* Defines for PIN_Beep: GPIOA.31 with pinCMx 6 on package pin 39 */
+#define GPIO_Beep_PIN_Beep_PIN                                  (DL_GPIO_PIN_31)
+#define GPIO_Beep_PIN_Beep_IOMUX                                  (IOMUX_PINCM6)
 /* Port definition for Pin Group GPIO */
 #define GPIO_PORT                                                        (GPIOA)
 
@@ -224,6 +246,15 @@ extern "C" {
 /* Defines for PIN_Line_Right2: GPIOB.24 with pinCMx 52 on package pin 23 */
 #define GPIO_LineGet_PIN_Line_Right2_PIN                        (DL_GPIO_PIN_24)
 #define GPIO_LineGet_PIN_Line_Right2_IOMUX                       (IOMUX_PINCM52)
+/* Port definition for Pin Group GPIO_LineGet_Mid */
+#define GPIO_LineGet_Mid_PORT                                            (GPIOA)
+
+/* Defines for PIN_Line_Mid1: GPIOA.12 with pinCMx 34 on package pin 5 */
+#define GPIO_LineGet_Mid_PIN_Line_Mid1_PIN                      (DL_GPIO_PIN_12)
+#define GPIO_LineGet_Mid_PIN_Line_Mid1_IOMUX                     (IOMUX_PINCM34)
+/* Defines for PIN_Line_Mid2: GPIOA.13 with pinCMx 35 on package pin 6 */
+#define GPIO_LineGet_Mid_PIN_Line_Mid2_PIN                      (DL_GPIO_PIN_13)
+#define GPIO_LineGet_Mid_PIN_Line_Mid2_IOMUX                     (IOMUX_PINCM35)
 
 
 
@@ -236,6 +267,7 @@ void SYSCFG_DL_SYSCTL_init(void);
 void SYSCFG_DL_PWM_MotorB_init(void);
 void SYSCFG_DL_PWM_MotorA_init(void);
 void SYSCFG_DL_TIMER_0_init(void);
+void SYSCFG_DL_I2C_OLED_init(void);
 void SYSCFG_DL_USB_TLL_init(void);
 void SYSCFG_DL_UART_Trans_init(void);
 

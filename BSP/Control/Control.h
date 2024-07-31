@@ -22,6 +22,7 @@ typedef struct
 	float Now_error;
     float Last_Error; 
 	float Output;
+	float Last_output;
     float OutputMax;       
 }PIDtypedef;
 
@@ -41,7 +42,11 @@ typedef struct
 
 extern Time0 Flag;
 
-void PID_init();                  
+void PID_init();     
+
+int One_question();
+
+
 
 extern void Interrupt_Solution();
 int Velocity_Con(int Aim_velocity);
