@@ -12,7 +12,7 @@ int16_t count = 0;
 uint8_t count_flag = 0;
 
 Time0 Flag;
-Mpu_typedef Mpu_init;
+Mpu_typedef Mpu_data;
 
 PIDtypedef Angle_PID; 
 PIDtypedef Velocity_PID; 
@@ -22,7 +22,7 @@ void Interrupt_Solution(void){
 	float Aim_angle = 0 ,Now_angle;
 	int Turn_out ,Motor_pwm = 0;
 	delay_ms(20);	
-	Now_angle = Mpu6050_Getdata(&Mpu_init);
+	Now_angle = Mpu6050_Getdata(&Mpu_data);
 	Turn_out = Angle_Position_PID(&Angle_PID,Aim_angle,Now_angle);
 	
 	if(count_flag == 1){

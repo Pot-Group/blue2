@@ -8,7 +8,7 @@
 
 uint8_t direction = 0;											//电机状态标志位   1正转    0反转
 uint8_t STAO = 0;   											//启停标志位       1启动    0停止
-uint16_t Vlocity_init = 3000;										//速度变量
+uint16_t Vlocity_init = 2700;										//速度变量
 
 /*
 *装载函数
@@ -43,18 +43,13 @@ int GPF_abs(int x)
 *入口函数：speed
 *出口函数：PWM值
 */
-float Duty_Limit(int16_t Duty)
+int Duty_Limit(int16_t Duty)
 {
 	
-		if(Duty >= 4000)
-			Duty =  4000;	
-		else
-				return Duty;
-			//Duty = (Duty * 4000) / 1023;
-
-//		if(Duty >= 4000)
-//			 Duty =  4000;	
-		
+		if(Duty >= 4000) Duty =  4000;	
+		else if(Duty < 0) Duty = 0;
+		else return Duty;				
+	
 		return Duty;
 }
 
@@ -78,7 +73,7 @@ void Moter_Right_Pwm(uint16_t duty){
 }
 
 
-void Motor_straight(float speed)										//电机直行,两轮正转
+void Motor_straight(int speed)										//电机直行,两轮正转
 {
 	PwmA_Duty_Set(0,0);																
 	PwmA_Duty_Set(Duty_Limit(speed),1);
@@ -90,34 +85,38 @@ void Motor_straight(float speed)										//电机直行,两轮正转
 
 
 
-void Motor_TurnRight(float speed)										//方向左转，左电机反转，右电机正转
+void Motor_TurnRight(int speed)										//方向左转，左电机反转，右电机正转
 
 {
-	int duty = 0;
-	duty =  Vlocity_init - speed;
+	int dutyA = 0,
+		dutyB = 0;
+	dutyA = Vlocity_init + speed;
+	dutyB = Vlocity_init - speed;
 	PwmA_Duty_Set(0,0);																
-	PwmA_Duty_Set(Duty_Limit(Vlocity_init),1);
+	PwmA_Duty_Set(Duty_Limit(dutyA),1);
 
 	PwmB_Duty_Set(0,0);
-	PwmB_Duty_Set(Duty_Limit(duty),1);
+	PwmB_Duty_Set(Duty_Limit(dutyB),1);
 
 }
 
 
-void Motor_Turnleft(float speed)										//方向右转，左电机正转，右电机反转
+void Motor_Turnleft(int speed)										//方向右转，左电机正转，右电机反转
 
 {
-	int duty = 0;
-	duty =  Vlocity_init - speed;
+	int dutyA = 0,
+		dutyB = 0;
+	dutyB = Vlocity_init + speed;
+	dutyA = Vlocity_init - speed;
 	PwmA_Duty_Set(0,0);																
-	PwmA_Duty_Set(Duty_Limit(duty),1);
+	PwmA_Duty_Set(Duty_Limit(dutyA),1);
 
 	PwmB_Duty_Set(0,0);
-	PwmB_Duty_Set(Duty_Limit(Vlocity_init),1);
+	PwmB_Duty_Set(Duty_Limit(dutyB),1);
 
 }
 
-void Motor_Stop(float speed)
+void Motor_Stop(int speed)
 {
 	PwmA_Duty_Set(Duty_Limit(speed),0);											//PA21 = 0 | PA22 = 1为停转														
 	PwmA_Duty_Set(Duty_Limit(speed),1);				

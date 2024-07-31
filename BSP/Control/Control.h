@@ -12,6 +12,8 @@ typedef struct
 
 }Mpu_typedef;
 
+extern Mpu_typedef Mpu_data;
+
 //extern Mpu_typedef Mpu_init;
 
 typedef struct
@@ -41,6 +43,8 @@ typedef struct
 }Time0;
 
 extern Time0 Flag;
+
+
 
 void PID_init();     
 

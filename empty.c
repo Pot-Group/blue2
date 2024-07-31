@@ -72,6 +72,8 @@ int main(void)
 	 // Encoder_datatest();
     while (1)
     {
+		
+		LineWalking();
 			//接收蓝牙数据
             //Receive_Bluetooth_Data();
             //蓝牙发送数据
@@ -79,8 +81,8 @@ int main(void)
 		
 		//Mpu_Getdata();
 		//Mpu6050_Getdata();
-
-			Interrupt_Solution();
+//		LineWalking();
+//			Interrupt_Solution();
 //		DL_GPIO_clearPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);  //输出高电平
 //        delay_ms(1000);//延时大概1S
 //        DL_GPIO_setPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);  //输出高电平
