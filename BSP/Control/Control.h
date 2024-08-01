@@ -38,7 +38,8 @@ typedef struct
 	unsigned char Two;
 	unsigned char Three;
 	unsigned char Four;
-	
+	unsigned char Five;
+	uint16_t count ;
 
 
 }typedef_flag;

@@ -91,12 +91,12 @@ int PIDController( PIDtypedef * Line_PID,float error)
 * @retval        void
 * @par History   无
 */
-int LineWalking(void)
+int LineWalking(int line_flag)
 {
     int lineSensors[SENSOR_COUNT] = {0,0,0,0,0,0},
 						pidOutput = 0;
     float error = 0;
-
+	
     GetLineWalking(lineSensors);
     CalculateError(lineSensors, &error);
     pidOutput = PIDController(&Line_PID,error);
@@ -109,6 +109,7 @@ int LineWalking(void)
 //	printf("5 : %d\n\n",lineSensors[5]);
 	
 	// 根据pidOutput调整电机速度
+	if(line_flag == 1){
 	if(pidOutput == 0) Motor_straight(Vlocity_init);
 		else if(pidOutput > 0){
 			
@@ -119,7 +120,7 @@ int LineWalking(void)
 			Motor_Turnleft(pidOutput);
 			
 		}   		
-		
+	}
     // 返回值可以根据需要进行修改
     if(lineSensors[0] > 0  || lineSensors[1] > 0  || lineSensors[4] > 0 || lineSensors[5] > 0 || lineSensors[2] > 0 || lineSensors[3] > 0)
 	{

@@ -1,5 +1,5 @@
 #include "Motor.h"
-
+#include "stdio.h"
 /*
         电机A为左电机(TIMG6)     			电机B为右电机(TIMG12)                  
         AIN2: PA22                    		AIN1: PA21		
@@ -90,14 +90,14 @@ void Motor_TurnRight(int speed)										//方向左转，左电机反转，右电机正转
 {
 	int dutyA = 0,
 		dutyB = 0;
-	dutyA = Vlocity_init + speed;
+	dutyA = Vlocity_init + speed ;
 	dutyB = Vlocity_init - speed;
 	PwmA_Duty_Set(0,0);																
 	PwmA_Duty_Set(Duty_Limit(dutyA),1);
 
 	PwmB_Duty_Set(0,0);
 	PwmB_Duty_Set(Duty_Limit(dutyB),1);
-
+	printf("R dutyA %d  dutyB %d\n", dutyA,dutyB);
 }
 
 
@@ -113,7 +113,7 @@ void Motor_Turnleft(int speed)										//方向右转，左电机正转，右电机反转
 
 	PwmB_Duty_Set(0,0);
 	PwmB_Duty_Set(Duty_Limit(dutyB),1);
-
+	printf("L dutyA %d  dutyB %d\n", dutyA,dutyB);
 }
 
 void Motor_Stop(int speed)

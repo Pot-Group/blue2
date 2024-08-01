@@ -14,7 +14,8 @@
 
 
 //X1为Mid1   X2为Mid2
-extern int LineWalking(void);								//巡线模式
+extern  int LineWalking(int line_flag);								//巡线模式
+
 
 
 #endif
