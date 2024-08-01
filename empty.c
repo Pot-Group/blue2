@@ -36,6 +36,8 @@
 #include "stdio.h"
 #include "mpu6050.h"
 #include "inv_mpu.h"
+#include "oled.h"
+
 
 unsigned int T_2ms  = 0;
 unsigned int T_6ms = 0;
@@ -43,6 +45,7 @@ unsigned int T_20ms = 0;
 unsigned int T_50ms = 0;
 
 float ind = 0.0f;
+    uint8_t t=' ';
 
 
 
@@ -55,6 +58,8 @@ int main(void)
 	 DL_TimerG_startCounter(TIMER_0_INST); 
 	 //NVIC_EnableIRQ(TIMER_0_INST_INT_IRQN);						//定时器0中断使能
 	 MPU6050_Init();
+		OLED_Init();
+	OLED_Clear();
 	 PID_init();
 	 NVIC_EnableIRQ(GPIO_Encoder_INT_IRQN);						//编码器中断使能			
 //	 uint8_t ret = 1;
@@ -78,7 +83,25 @@ int main(void)
 //		LineWalking();  
 		
 		Interrupt_Solution(&Flag);       
-		
+//        OLED_Clear();
+//        OLED_ShowChinese(0,0,0,16);//中
+//        OLED_ShowChinese(18,0,1,16);//景
+//        OLED_ShowChinese(36,0,2,16);//园
+//        OLED_ShowChinese(54,0,3,16);//电
+//        OLED_ShowChinese(72,0,4,16);//子
+//        OLED_ShowChinese(90,0,5,16);//科
+//        OLED_ShowChinese(108,0,6,16);//技
+//        OLED_ShowString(8,2,(uint8_t *)"ZHONGJINGYUAN",16);
+//        OLED_ShowString(20,4,(uint8_t *)"2014/05/01",16);
+//        OLED_ShowString(0,6,(uint8_t *)"ASCII:",16);  
+//        OLED_ShowString(63,6,(uint8_t *)"CODE:",16);
+//        OLED_ShowChar(48,6,t,16);
+//        t++;
+//        if(t>'~')t=' ';
+//        OLED_ShowNum(103,6,t,3,16);
+//        delay_ms(500);
+//        OLED_Clear();
+
 //		Mpu6050_Getdata(&Mpu_data);
 			//接收蓝牙数据
             //Receive_Bluetooth_Data();
@@ -88,7 +111,7 @@ int main(void)
 		
 //		Mpu6050_Getdata(&Mpu_data);
 //		LineWalking();
-//			Interrupt_Solution();
+			Interrupt_Solution();
 //		DL_GPIO_clearPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);  //输出高电平
 //        delay_ms(1000);//延时大概1S
 //        DL_GPIO_setPins(GPIO_LED_PORT,GPIO_LED_PIN_0_PIN);  //输出高电平
@@ -114,13 +137,7 @@ void TIMER_0_INST_IRQHandler(void)
     switch( DL_TimerG_getPendingInterrupt(TIMER_0_INST) ){
 			case DL_TIMER_IIDX_ZERO:
 				
-
-			
-					T_2ms ++;
-					T_6ms ++;
-					T_20ms ++;	
-					T_50ms ++;
-			
+											
 			break;            
 			default:								
             break;

@@ -38,6 +38,7 @@ gate7.enable = true;
 
 GPIO1.$name                              = "KEY";
 GPIO1.port                               = "PORTA";
+GPIO1.associatedPins.create(3);
 GPIO1.associatedPins[0].$name            = "PIN_18";
 GPIO1.associatedPins[0].direction        = "INPUT";
 GPIO1.associatedPins[0].assignedPin      = "18";
@@ -45,6 +46,16 @@ GPIO1.associatedPins[0].internalResistor = "PULL_DOWN";
 GPIO1.associatedPins[0].interruptEn      = true;
 GPIO1.associatedPins[0].polarity         = "RISE";
 GPIO1.associatedPins[0].pin.$assign      = "PA18";
+GPIO1.associatedPins[1].direction        = "INPUT";
+GPIO1.associatedPins[1].assignedPin      = "23";
+GPIO1.associatedPins[1].$name            = "PIN_23";
+GPIO1.associatedPins[1].internalResistor = "PULL_DOWN";
+GPIO1.associatedPins[1].pin.$assign      = "PA23";
+GPIO1.associatedPins[2].$name            = "PIN_24";
+GPIO1.associatedPins[2].direction        = "INPUT";
+GPIO1.associatedPins[2].internalResistor = "PULL_DOWN";
+GPIO1.associatedPins[2].assignedPin      = "24";
+GPIO1.associatedPins[2].pin.$assign      = "PA24";
 
 const Board = scripting.addModule("/ti/driverlib/Board", {}, false);
 

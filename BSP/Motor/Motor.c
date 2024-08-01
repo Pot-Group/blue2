@@ -97,7 +97,7 @@ void Motor_TurnRight(int speed)										//方向左转，左电机反转，右电机正转
 
 	PwmB_Duty_Set(0,0);
 	PwmB_Duty_Set(Duty_Limit(dutyB),1);
-	printf("R dutyA %d  dutyB %d\n", dutyA,dutyB);
+	//printf("R dutyA %d  dutyB %d\n", dutyA,dutyB);
 }
 
 
@@ -113,7 +113,7 @@ void Motor_Turnleft(int speed)										//方向右转，左电机正转，右电机反转
 
 	PwmB_Duty_Set(0,0);
 	PwmB_Duty_Set(Duty_Limit(dutyB),1);
-	printf("L dutyA %d  dutyB %d\n", dutyA,dutyB);
+	//printf("L dutyA %d  dutyB %d\n", dutyA,dutyB);
 }
 
 void Motor_Stop(int speed)

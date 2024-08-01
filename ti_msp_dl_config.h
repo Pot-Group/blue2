@@ -174,16 +174,6 @@ extern "C" {
 
 
 
-/* Port definition for Pin Group KEY */
-#define KEY_PORT                                                         (GPIOA)
-
-/* Defines for PIN_18: GPIOA.18 with pinCMx 40 on package pin 11 */
-// pins affected by this interrupt request:["PIN_18"]
-#define KEY_INT_IRQN                                            (GPIOA_INT_IRQn)
-#define KEY_INT_IIDX                            (DL_INTERRUPT_GROUP1_IIDX_GPIOA)
-#define KEY_PIN_18_IIDX                                     (DL_GPIO_IIDX_DIO18)
-#define KEY_PIN_18_PIN                                          (DL_GPIO_PIN_18)
-#define KEY_PIN_18_IOMUX                                         (IOMUX_PINCM40)
 /* Port definition for Pin Group HC05 */
 #define HC05_PORT                                                        (GPIOA)
 
@@ -202,6 +192,22 @@ extern "C" {
 /* Defines for PIN_Beep: GPIOA.31 with pinCMx 6 on package pin 39 */
 #define GPIO_Beep_PIN_Beep_PIN                                  (DL_GPIO_PIN_31)
 #define GPIO_Beep_PIN_Beep_IOMUX                                  (IOMUX_PINCM6)
+/* Port definition for Pin Group KEY */
+#define KEY_PORT                                                         (GPIOA)
+
+/* Defines for PIN_18: GPIOA.18 with pinCMx 40 on package pin 11 */
+// pins affected by this interrupt request:["PIN_18"]
+#define KEY_INT_IRQN                                            (GPIOA_INT_IRQn)
+#define KEY_INT_IIDX                            (DL_INTERRUPT_GROUP1_IIDX_GPIOA)
+#define KEY_PIN_18_IIDX                                     (DL_GPIO_IIDX_DIO18)
+#define KEY_PIN_18_PIN                                          (DL_GPIO_PIN_18)
+#define KEY_PIN_18_IOMUX                                         (IOMUX_PINCM40)
+/* Defines for PIN_23: GPIOA.23 with pinCMx 53 on package pin 24 */
+#define KEY_PIN_23_PIN                                          (DL_GPIO_PIN_23)
+#define KEY_PIN_23_IOMUX                                         (IOMUX_PINCM53)
+/* Defines for PIN_24: GPIOA.24 with pinCMx 54 on package pin 25 */
+#define KEY_PIN_24_PIN                                          (DL_GPIO_PIN_24)
+#define KEY_PIN_24_IOMUX                                         (IOMUX_PINCM54)
 /* Port definition for Pin Group GPIO */
 #define GPIO_PORT                                                        (GPIOA)
 
